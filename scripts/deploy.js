@@ -14,30 +14,34 @@ async function main() {
   const registry = await deployRegistry();
 
   await setupRegistry(registry, deployer);
-   
-  const registrar = await deployRegistrar(registry, tld);
+
+  const registryWithFallback = await deployRegistryWithFallback(registry);
  
-  await setupRegistrar(registry, registrar);
+  await setupRegistry(registryWithFallback, deployer);
+   
+  const registrar = await deployRegistrar(registryWithFallback, tld);
+ 
+  await setupRegistrar(registryWithFallback, registrar);
 
-  const reverseRegistrar = await deployReverseRegistrar(registry);
+  const reverseRegistrar = await deployReverseRegistrar(registryWithFallback);
 
-  await setupReverseRegistrar(registry, registrar, reverseRegistrar, deployer)
+  await setupReverseRegistrar(registryWithFallback, registrar, reverseRegistrar, deployer)
 
-  const baseRegistrarImplementation = await deployBaseRegistrarImplementation(registry);
+  const baseRegistrarImplementation = await deployBaseRegistrarImplementation(registryWithFallback);
 
-  await setupBaseRegistrarImplementation(registry, baseRegistrarImplementation);
+  await setupBaseRegistrarImplementation(registryWithFallback, baseRegistrarImplementation);
  
   const stablePriceOracle = await deployStablePriceOracle();
 
   await setupStablePriceOracle(stablePriceOracle, ethers.parseEther("0.000000000000000025"), ethers.parseEther("0.000000000000000025"), ethers.parseEther("0.000000000000000025"), ethers.parseEther("0.000000000000000025"), ethers.parseEther("0.000000000000000025"));
 
-  const zkfRegistrarController = await deployZKFRegistrarController(baseRegistrarImplementation, stablePriceOracle, 10, 86400, reverseRegistrar, registry);
+  const zkfRegistrarController = await deployZKFRegistrarController(baseRegistrarImplementation, stablePriceOracle, 10, 86400, reverseRegistrar, registryWithFallback);
   
   await setupZKFRegistrarController(reverseRegistrar, baseRegistrarImplementation, zkfRegistrarController);
   
-  const publicResolver  = await deployPublicResolver(registry, zkfRegistrarController, reverseRegistrar);
+  const publicResolver  = await deployPublicResolver(registryWithFallback, zkfRegistrarController, reverseRegistrar);
 
-  await setupResolver(registry, publicResolver)
+  await setupResolver(registryWithFallback, publicResolver)
  
 
 };
@@ -49,24 +53,31 @@ async function deployRegistry() {
   return registry;
 }
 
+async function deployRegistryWithFallback(registry) { 
+  const registryWithFallback = await ethers.deployContract("ENSRegistryWithFallback", [registry.target]);
+  await registryWithFallback.waitForDeployment();
+  console.log(`RegistryWithFallback Deployed: ${registryWithFallback.target} with params: ${registry.target}`);
+  return registryWithFallback;
+}
+
 async function deployRegistrar(registry, tld) { 
   const registrar = await ethers.deployContract("FIFSRegistrar", [registry.target, namehash.hash(tld)]); 
   await registrar.waitForDeployment();
-  console.log(`FIFS Registrar Deployed: ${registrar.target} with the params; registry: ${registry.target}, namehash: ${namehash.hash(tld)}`)
+  console.log(`FIFS Registrar Deployed: ${registrar.target} with the params: ${registry.target}, ${namehash.hash(tld)}`)
   return registrar;
 }
  
 async function deployReverseRegistrar(registry) { 
   const reverseRegistrar = await ethers.deployContract("ReverseRegistrar", [registry.target]);
   await reverseRegistrar.waitForDeployment();
-  console.log(`Reverse Registrar Deployed: ${reverseRegistrar.target} with the params; registry: ${registry.target}`);
+  console.log(`Reverse Registrar Deployed: ${reverseRegistrar.target} with the params: ${registry.target}`);
   return reverseRegistrar;
 }
   
 async function deployBaseRegistrarImplementation(registry) { 
   const baseRegistrarImplementation = await ethers.deployContract("BaseRegistrarImplementation",[registry.target, namehash.hash(tld)]);
   await baseRegistrarImplementation.waitForDeployment();
-  console.log(`BaseRegistrarImplementation Deployed: ${baseRegistrarImplementation.target} with the params; registry: ${registry.target}, ${namehash.hash(tld)}`)
+  console.log(`BaseRegistrarImplementation Deployed: ${baseRegistrarImplementation.target} with the params: ${registry.target}, ${namehash.hash(tld)}`)
   return baseRegistrarImplementation;
 }
 
@@ -80,7 +91,7 @@ async function deployStablePriceOracle() {
 async function deployZKFRegistrarController(baseRegistrarImplementation, stablePriceOracle, minCommitmentAge, maxCommitmentAge, reverseRegistrar, registry) { 
   const zkfRegistrarController = await ethers.deployContract("ZKFRegistrarController",[baseRegistrarImplementation.target, stablePriceOracle.target, minCommitmentAge, maxCommitmentAge, reverseRegistrar.target, registry.target]);
   await zkfRegistrarController.waitForDeployment();
-  console.log(`ZKFRegistrarController Deployed: ${zkfRegistrarController.target} with the params; ${baseRegistrarImplementation.target} ${stablePriceOracle.target} ${minCommitmentAge} ${maxCommitmentAge} ${reverseRegistrar.target} ${registry.target}`)
+  console.log(`ZKFRegistrarController Deployed: ${zkfRegistrarController.target} with the params: ${baseRegistrarImplementation.target} ${stablePriceOracle.target} ${minCommitmentAge} ${maxCommitmentAge} ${reverseRegistrar.target} ${registry.target}`)
   return zkfRegistrarController;
 }
 
