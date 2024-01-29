@@ -1,10 +1,10 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "/Users/rdonmez/Documents/fns-contracts/contracts/dnssec-oracle/BytesUtils.sol": {
-      "lastModificationDate": 1705329543635,
-      "contentHash": "a511e9e56fd90bb74a76adc3a688fe5d",
-      "sourceName": "contracts/dnssec-oracle/BytesUtils.sol",
+    "/Users/rdonmez/Documents/fns-contracts/node_modules/hardhat/console.sol": {
+      "lastModificationDate": 1705330292748,
+      "contentHash": "896f68942c3a20e9ae3c3c5bfd3add54",
+      "sourceName": "hardhat/console.sol",
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
@@ -31,24 +31,24 @@
       },
       "imports": [],
       "versionPragmas": [
-        "^0.8.20"
+        ">=0.4.22 <0.9.0"
       ],
       "artifacts": [
-        "BytesUtils"
+        "console"
       ]
     },
-    "/Users/rdonmez/Documents/fns-contracts/contracts/dnssec-oracle/RRUtils.sol": {
-      "lastModificationDate": 1705329547451,
-      "contentHash": "e47cb751d0f53d85d5fb49a82ee8ce93",
-      "sourceName": "contracts/dnssec-oracle/RRUtils.sol",
+    "/Users/rdonmez/Documents/fns-contracts/contracts/FNSDeployer.sol": {
+      "lastModificationDate": 1706552087843,
+      "contentHash": "609a1cd74673423b5245485afb66feda",
+      "sourceName": "contracts/FNSDeployer.sol",
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
-          "evmVersion": "paris",
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
+          "evmVersion": "paris",
           "outputSelection": {
             "*": {
               "*": [
@@ -66,64 +66,34 @@
         }
       },
       "imports": [
-        "./BytesUtils.sol",
-        "@ensdomains/buffer/contracts/Buffer.sol"
+        "./registry/ENSRegistry.sol",
+        "./registry/ENSRegistryWithFallback.sol",
+        "./registry/FIFSRegistrar.sol",
+        "./reverseRegistrar/ReverseRegistrar.sol",
+        "./zkfregistrar/BaseRegistrarImplementation.sol",
+        "./zkfregistrar/StablePriceOracle.sol",
+        "./zkfregistrar/ZKFRegistrarController.sol",
+        "./resolvers/PublicResolver.sol"
       ],
       "versionPragmas": [
         "^0.8.20"
       ],
       "artifacts": [
-        "RRUtils"
+        "FNSDeployer"
       ]
     },
-    "/Users/rdonmez/Documents/fns-contracts/node_modules/@ensdomains/buffer/contracts/Buffer.sol": {
-      "lastModificationDate": 1705329486079,
-      "contentHash": "d3d00f20f206848f1e90d596ebcc557b",
-      "sourceName": "@ensdomains/buffer/contracts/Buffer.sol",
+    "/Users/rdonmez/Documents/fns-contracts/contracts/registry/ENSRegistry.sol": {
+      "lastModificationDate": 1705580097425,
+      "contentHash": "3701094014f93ce4727abbd76c4513d2",
+      "sourceName": "contracts/registry/ENSRegistry.sol",
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
-          "evmVersion": "paris",
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.4"
-      ],
-      "artifacts": [
-        "Buffer"
-      ]
-    },
-    "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/DNSResolver.sol": {
-      "lastModificationDate": 1705329532220,
-      "contentHash": "e5b925a4ca94270e68b12ab1a3a4acde",
-      "sourceName": "contracts/resolvers/profiles/DNSResolver.sol",
-      "solcConfig": {
-        "version": "0.8.20",
-        "settings": {
           "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
           "outputSelection": {
             "*": {
               "*": [
@@ -141,66 +111,27 @@
         }
       },
       "imports": [
-        "../ResolverBase.sol",
-        "../../dnssec-oracle/RRUtils.sol",
-        "./interfaces/IDNSRecordResolver.sol",
-        "./interfaces/IDNSZoneResolver.sol"
+        "./ENS.sol"
       ],
       "versionPragmas": [
         "^0.8.20"
       ],
       "artifacts": [
-        "DNSResolver"
+        "ENSRegistry"
       ]
     },
-    "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/interfaces/IDNSRecordResolver.sol": {
-      "lastModificationDate": 1705328262678,
-      "contentHash": "f9be162bff68e0104f45e7a016979196",
-      "sourceName": "contracts/resolvers/profiles/interfaces/IDNSRecordResolver.sol",
+    "/Users/rdonmez/Documents/fns-contracts/contracts/registry/ENSRegistryWithFallback.sol": {
+      "lastModificationDate": 1705434467545,
+      "contentHash": "9a334b5ac32e8ce13df388abb7e2df9a",
+      "sourceName": "contracts/registry/ENSRegistryWithFallback.sol",
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
-          "evmVersion": "paris",
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.20"
-      ],
-      "artifacts": [
-        "IDNSRecordResolver"
-      ]
-    },
-    "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/ResolverBase.sol": {
-      "lastModificationDate": 1705592726885,
-      "contentHash": "0a6269ba83a5792e620fbf95cc85fc9d",
-      "sourceName": "contracts/resolvers/ResolverBase.sol",
-      "solcConfig": {
-        "version": "0.8.20",
-        "settings": {
           "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
           "outputSelection": {
             "*": {
               "*": [
@@ -218,100 +149,28 @@
         }
       },
       "imports": [
-        "@openzeppelin/contracts/utils/introspection/ERC165.sol",
-        "./profiles/interfaces/IVersionableResolver.sol"
+        "./ENS.sol",
+        "./ENSRegistry.sol"
       ],
       "versionPragmas": [
         "^0.8.20"
       ],
       "artifacts": [
-        "ResolverBase"
+        "ENSRegistryWithFallback"
       ]
     },
-    "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/interfaces/IDNSZoneResolver.sol": {
-      "lastModificationDate": 1705328275266,
-      "contentHash": "7ae942c5314c2043f2036d71c44c6715",
-      "sourceName": "contracts/resolvers/profiles/interfaces/IDNSZoneResolver.sol",
+    "/Users/rdonmez/Documents/fns-contracts/contracts/zkfregistrar/BaseRegistrarImplementation.sol": {
+      "lastModificationDate": 1706542798505,
+      "contentHash": "1aa4d49e6ffdcdb63a4ed32c20c86513",
+      "sourceName": "contracts/zkfregistrar/BaseRegistrarImplementation.sol",
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
-          "evmVersion": "paris",
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.8.4"
-      ],
-      "artifacts": [
-        "IDNSZoneResolver"
-      ]
-    },
-    "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/interfaces/IVersionableResolver.sol": {
-      "lastModificationDate": 1705328136446,
-      "contentHash": "2ef84231523c76b7e341cf61ac8b1655",
-      "sourceName": "contracts/resolvers/profiles/interfaces/IVersionableResolver.sol",
-      "solcConfig": {
-        "version": "0.8.20",
-        "settings": {
           "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.20"
-      ],
-      "artifacts": [
-        "IVersionableResolver"
-      ]
-    },
-    "/Users/rdonmez/Documents/fns-contracts/node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol": {
-      "lastModificationDate": 1705329487159,
-      "contentHash": "6a55c353946e471d9792965d06208295",
-      "sourceName": "@openzeppelin/contracts/utils/introspection/ERC165.sol",
-      "solcConfig": {
-        "version": "0.8.20",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
           "outputSelection": {
             "*": {
               "*": [
@@ -329,63 +188,30 @@
         }
       },
       "imports": [
-        "./IERC165.sol"
+        "../registry/ENS.sol",
+        "./IBaseRegistrar.sol",
+        "@openzeppelin/contracts/token/ERC721/ERC721.sol",
+        "@openzeppelin/contracts/access/Ownable.sol"
       ],
       "versionPragmas": [
         "^0.8.20"
       ],
       "artifacts": [
-        "ERC165"
+        "BaseRegistrarImplementation"
       ]
     },
-    "/Users/rdonmez/Documents/fns-contracts/node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol": {
-      "lastModificationDate": 1705329487159,
-      "contentHash": "de0163561b417b800d01749cbbe2147e",
-      "sourceName": "@openzeppelin/contracts/utils/introspection/IERC165.sol",
+    "/Users/rdonmez/Documents/fns-contracts/contracts/reverseRegistrar/ReverseRegistrar.sol": {
+      "lastModificationDate": 1705592730763,
+      "contentHash": "bed1c69883429dbec52ea9a890e8e636",
+      "sourceName": "contracts/reverseRegistrar/ReverseRegistrar.sol",
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
-          "evmVersion": "paris",
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.20"
-      ],
-      "artifacts": [
-        "IERC165"
-      ]
-    },
-    "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/Resolver.sol": {
-      "lastModificationDate": 1705328498431,
-      "contentHash": "6dda1092e0977aecfe7c91846ab1b3e3",
-      "sourceName": "contracts/resolvers/Resolver.sol",
-      "solcConfig": {
-        "version": "0.8.20",
-        "settings": {
           "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
           "outputSelection": {
             "*": {
               "*": [
@@ -403,38 +229,31 @@
         }
       },
       "imports": [
-        "@openzeppelin/contracts/utils/introspection/IERC165.sol",
-        "./profiles/interfaces/IABIResolver.sol",
-        "./profiles/interfaces/IAddressResolver.sol",
-        "./profiles/interfaces/IAddrResolver.sol",
-        "./profiles/interfaces/IContentHashResolver.sol",
-        "./profiles/interfaces/IDNSRecordResolver.sol",
-        "./profiles/interfaces/IDNSZoneResolver.sol",
-        "./profiles/interfaces/IInterfaceResolver.sol",
-        "./profiles/interfaces/INameResolver.sol",
-        "./profiles/interfaces/IPubkeyResolver.sol",
-        "./profiles/interfaces/ITextResolver.sol",
-        "./profiles/interfaces/IExtendedResolver.sol"
+        "../registry/ENS.sol",
+        "./IReverseRegistrar.sol",
+        "@openzeppelin/contracts/access/Ownable.sol",
+        "../root/Controllable.sol"
       ],
       "versionPragmas": [
         "^0.8.20"
       ],
       "artifacts": [
-        "Resolver"
+        "NameResolver",
+        "ReverseRegistrar"
       ]
     },
-    "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/interfaces/IAddrResolver.sol": {
-      "lastModificationDate": 1705588975030,
-      "contentHash": "e7f5877654fd80a002faa1b927c143e2",
-      "sourceName": "contracts/resolvers/profiles/interfaces/IAddrResolver.sol",
+    "/Users/rdonmez/Documents/fns-contracts/contracts/registry/FIFSRegistrar.sol": {
+      "lastModificationDate": 1706546530277,
+      "contentHash": "003b6fc26827b2cb57173a10db3e0db3",
+      "sourceName": "contracts/registry/FIFSRegistrar.sol",
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
-          "evmVersion": "paris",
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
+          "evmVersion": "paris",
           "outputSelection": {
             "*": {
               "*": [
@@ -451,300 +270,14 @@
           }
         }
       },
-      "imports": [],
+      "imports": [
+        "./ENS.sol"
+      ],
       "versionPragmas": [
         "^0.8.20"
       ],
       "artifacts": [
-        "IAddrResolver"
-      ]
-    },
-    "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/interfaces/IABIResolver.sol": {
-      "lastModificationDate": 1705588971702,
-      "contentHash": "2e2f4d4ab7b786182d8f6b7fe19093aa",
-      "sourceName": "contracts/resolvers/profiles/interfaces/IABIResolver.sol",
-      "solcConfig": {
-        "version": "0.8.20",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.20"
-      ],
-      "artifacts": [
-        "IABIResolver"
-      ]
-    },
-    "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/interfaces/IAddressResolver.sol": {
-      "lastModificationDate": 1705328072314,
-      "contentHash": "6e9f4a9710996bdd907456126d02d606",
-      "sourceName": "contracts/resolvers/profiles/interfaces/IAddressResolver.sol",
-      "solcConfig": {
-        "version": "0.8.20",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.20"
-      ],
-      "artifacts": [
-        "IAddressResolver"
-      ]
-    },
-    "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/interfaces/IContentHashResolver.sol": {
-      "lastModificationDate": 1705588978383,
-      "contentHash": "d05b28855d6acb127d6d7e84ef82a049",
-      "sourceName": "contracts/resolvers/profiles/interfaces/IContentHashResolver.sol",
-      "solcConfig": {
-        "version": "0.8.20",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.20"
-      ],
-      "artifacts": [
-        "IContentHashResolver"
-      ]
-    },
-    "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/interfaces/IInterfaceResolver.sol": {
-      "lastModificationDate": 1705588981148,
-      "contentHash": "4350ac2877a1b553a0307d9b0ee80ffa",
-      "sourceName": "contracts/resolvers/profiles/interfaces/IInterfaceResolver.sol",
-      "solcConfig": {
-        "version": "0.8.20",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.20"
-      ],
-      "artifacts": [
-        "IInterfaceResolver"
-      ]
-    },
-    "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/interfaces/IPubkeyResolver.sol": {
-      "lastModificationDate": 1705588988186,
-      "contentHash": "1de147a3a9abb36b4e6ba9269a213fbf",
-      "sourceName": "contracts/resolvers/profiles/interfaces/IPubkeyResolver.sol",
-      "solcConfig": {
-        "version": "0.8.20",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.20"
-      ],
-      "artifacts": [
-        "IPubkeyResolver"
-      ]
-    },
-    "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/interfaces/ITextResolver.sol": {
-      "lastModificationDate": 1705588990938,
-      "contentHash": "14ae3b9b5820f6f773306d9ec8fd8c47",
-      "sourceName": "contracts/resolvers/profiles/interfaces/ITextResolver.sol",
-      "solcConfig": {
-        "version": "0.8.20",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.20"
-      ],
-      "artifacts": [
-        "ITextResolver"
-      ]
-    },
-    "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/interfaces/IExtendedResolver.sol": {
-      "lastModificationDate": 1705328102252,
-      "contentHash": "71ea7a7ac888bf7de035524162750a9a",
-      "sourceName": "contracts/resolvers/profiles/interfaces/IExtendedResolver.sol",
-      "solcConfig": {
-        "version": "0.8.20",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.20"
-      ],
-      "artifacts": [
-        "IExtendedResolver"
-      ]
-    },
-    "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/interfaces/INameResolver.sol": {
-      "lastModificationDate": 1705588984538,
-      "contentHash": "de060f57779c5b50a797e0d73266488a",
-      "sourceName": "contracts/resolvers/profiles/interfaces/INameResolver.sol",
-      "solcConfig": {
-        "version": "0.8.20",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.20"
-      ],
-      "artifacts": [
-        "INameResolver"
+        "FIFSRegistrar"
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/zkfregistrar/ZKFRegistrarController.sol": {
@@ -754,11 +287,11 @@
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
-          "evmVersion": "paris",
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
+          "evmVersion": "paris",
           "outputSelection": {
             "*": {
               "*": [
@@ -796,18 +329,58 @@
         "ZKFRegistrarController"
       ]
     },
-    "/Users/rdonmez/Documents/fns-contracts/contracts/zkfregistrar/BaseRegistrarImplementation.sol": {
-      "lastModificationDate": 1706527424553,
-      "contentHash": "8a72dab09c033020c710b034d4b3bb74",
-      "sourceName": "contracts/zkfregistrar/BaseRegistrarImplementation.sol",
+    "/Users/rdonmez/Documents/fns-contracts/contracts/zkfregistrar/StablePriceOracle.sol": {
+      "lastModificationDate": 1705493325569,
+      "contentHash": "9f8ff9e3784438f6807ac226b991b1f2",
+      "sourceName": "contracts/zkfregistrar/StablePriceOracle.sol",
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
-          "evmVersion": "paris",
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IPriceOracle.sol",
+        "./StringUtils.sol",
+        "@openzeppelin/contracts/access/Ownable.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "StablePriceOracle"
+      ]
+    },
+    "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/PublicResolver.sol": {
+      "lastModificationDate": 1705589318785,
+      "contentHash": "15766cc51667b2d6d24358823f51318c",
+      "sourceName": "contracts/resolvers/PublicResolver.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
           "outputSelection": {
             "*": {
               "*": [
@@ -826,51 +399,21 @@
       },
       "imports": [
         "../registry/ENS.sol",
-        "./IBaseRegistrar.sol",
-        "@openzeppelin/contracts/token/ERC721/ERC721.sol",
-        "@openzeppelin/contracts/access/Ownable.sol"
+        "./profiles/ABIResolver.sol",
+        "./profiles/AddrResolver.sol",
+        "./profiles/ContentHashResolver.sol",
+        "./profiles/DNSResolver.sol",
+        "./profiles/InterfaceResolver.sol",
+        "./profiles/NameResolver.sol",
+        "./profiles/PubkeyResolver.sol",
+        "./profiles/TextResolver.sol",
+        "./Multicallable.sol"
       ],
       "versionPragmas": [
         "^0.8.20"
       ],
       "artifacts": [
-        "BaseRegistrarImplementation"
-      ]
-    },
-    "/Users/rdonmez/Documents/fns-contracts/contracts/zkfregistrar/StringUtils.sol": {
-      "lastModificationDate": 1705492530846,
-      "contentHash": "3a10f282536a1ba0719a0977de39cd36",
-      "sourceName": "contracts/zkfregistrar/StringUtils.sol",
-      "solcConfig": {
-        "version": "0.8.20",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.20"
-      ],
-      "artifacts": [
-        "StringUtils"
+        "PublicResolver"
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/registry/ENS.sol": {
@@ -880,11 +423,11 @@
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
-          "evmVersion": "paris",
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
+          "evmVersion": "paris",
           "outputSelection": {
             "*": {
               "*": [
@@ -909,274 +452,6 @@
         "ENS"
       ]
     },
-    "/Users/rdonmez/Documents/fns-contracts/contracts/reverseRegistrar/ReverseRegistrar.sol": {
-      "lastModificationDate": 1705592730763,
-      "contentHash": "bed1c69883429dbec52ea9a890e8e636",
-      "sourceName": "contracts/reverseRegistrar/ReverseRegistrar.sol",
-      "solcConfig": {
-        "version": "0.8.20",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "../registry/ENS.sol",
-        "./IReverseRegistrar.sol",
-        "@openzeppelin/contracts/access/Ownable.sol",
-        "../root/Controllable.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.20"
-      ],
-      "artifacts": [
-        "NameResolver",
-        "ReverseRegistrar"
-      ]
-    },
-    "/Users/rdonmez/Documents/fns-contracts/contracts/zkfregistrar/IZKFRegistrarController.sol": {
-      "lastModificationDate": 1705429668921,
-      "contentHash": "e2a108d3d9fc983d74e4b4716086990e",
-      "sourceName": "contracts/zkfregistrar/IZKFRegistrarController.sol",
-      "solcConfig": {
-        "version": "0.8.20",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "./IPriceOracle.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.20"
-      ],
-      "artifacts": [
-        "IZKFRegistrarController"
-      ]
-    },
-    "/Users/rdonmez/Documents/fns-contracts/contracts/zkfregistrar/IPriceOracle.sol": {
-      "lastModificationDate": 1705492537308,
-      "contentHash": "eadc5890cc839c0a0ee9431b3f3492b4",
-      "sourceName": "contracts/zkfregistrar/IPriceOracle.sol",
-      "solcConfig": {
-        "version": "0.8.20",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.20"
-      ],
-      "artifacts": [
-        "IPriceOracle"
-      ]
-    },
-    "/Users/rdonmez/Documents/fns-contracts/contracts/utils/ERC20Recoverable.sol": {
-      "lastModificationDate": 1705492376624,
-      "contentHash": "fe17f93b01b9fad828c1a20bbe962e13",
-      "sourceName": "contracts/utils/ERC20Recoverable.sol",
-      "solcConfig": {
-        "version": "0.8.20",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "@openzeppelin/contracts/access/Ownable.sol",
-        "@openzeppelin/contracts/token/ERC20/IERC20.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.20"
-      ],
-      "artifacts": [
-        "ERC20Recoverable"
-      ]
-    },
-    "/Users/rdonmez/Documents/fns-contracts/contracts/reverseRegistrar/ReverseClaimer.sol": {
-      "lastModificationDate": 1705435737777,
-      "contentHash": "617be4a21f3c951ff322495f7af9f30b",
-      "sourceName": "contracts/reverseRegistrar/ReverseClaimer.sol",
-      "solcConfig": {
-        "version": "0.8.20",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "../registry/ENS.sol",
-        "../reverseRegistrar/IReverseRegistrar.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.20"
-      ],
-      "artifacts": [
-        "ReverseClaimer"
-      ]
-    },
-    "/Users/rdonmez/Documents/fns-contracts/node_modules/@openzeppelin/contracts/access/Ownable.sol": {
-      "lastModificationDate": 1705492533470,
-      "contentHash": "d3c790edc9ccf808a17c5a6cd13614fd",
-      "sourceName": "@openzeppelin/contracts/access/Ownable.sol",
-      "solcConfig": {
-        "version": "0.8.20",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "../utils/Context.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.20"
-      ],
-      "artifacts": [
-        "Ownable"
-      ]
-    },
-    "/Users/rdonmez/Documents/fns-contracts/node_modules/@openzeppelin/contracts/utils/Address.sol": {
-      "lastModificationDate": 1705329486015,
-      "contentHash": "79c699f80eb8a9b168cb34e37816f894",
-      "sourceName": "@openzeppelin/contracts/utils/Address.sol",
-      "solcConfig": {
-        "version": "0.8.20",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.20"
-      ],
-      "artifacts": [
-        "Address"
-      ]
-    },
     "/Users/rdonmez/Documents/fns-contracts/contracts/zkfregistrar/IBaseRegistrar.sol": {
       "lastModificationDate": 1705588993742,
       "contentHash": "e2428fb065ab4d7a34c183ee1427d66a",
@@ -1184,11 +459,11 @@
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
-          "evmVersion": "paris",
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
+          "evmVersion": "paris",
           "outputSelection": {
             "*": {
               "*": [
@@ -1216,6 +491,44 @@
         "IBaseRegistrar"
       ]
     },
+    "/Users/rdonmez/Documents/fns-contracts/node_modules/@openzeppelin/contracts/access/Ownable.sol": {
+      "lastModificationDate": 1705575843820,
+      "contentHash": "d3c790edc9ccf808a17c5a6cd13614fd",
+      "sourceName": "@openzeppelin/contracts/access/Ownable.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../utils/Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Ownable"
+      ]
+    },
     "/Users/rdonmez/Documents/fns-contracts/node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol": {
       "lastModificationDate": 1705329487144,
       "contentHash": "1e64e2ad597dc5b2dae11346502baad4",
@@ -1223,11 +536,11 @@
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
-          "evmVersion": "paris",
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
+          "evmVersion": "paris",
           "outputSelection": {
             "*": {
               "*": [
@@ -1267,11 +580,11 @@
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
-          "evmVersion": "paris",
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
+          "evmVersion": "paris",
           "outputSelection": {
             "*": {
               "*": [
@@ -1298,6 +611,42 @@
         "IERC721"
       ]
     },
+    "/Users/rdonmez/Documents/fns-contracts/node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol": {
+      "lastModificationDate": 1705329487159,
+      "contentHash": "de0163561b417b800d01749cbbe2147e",
+      "sourceName": "@openzeppelin/contracts/utils/introspection/IERC165.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IERC165"
+      ]
+    },
     "/Users/rdonmez/Documents/fns-contracts/node_modules/@openzeppelin/contracts/utils/Context.sol": {
       "lastModificationDate": 1705329486015,
       "contentHash": "67bfbc07588eb8683b3fd8f6f909563e",
@@ -1305,11 +654,11 @@
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
-          "evmVersion": "paris",
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
+          "evmVersion": "paris",
           "outputSelection": {
             "*": {
               "*": [
@@ -1334,18 +683,18 @@
         "Context"
       ]
     },
-    "/Users/rdonmez/Documents/fns-contracts/node_modules/@openzeppelin/contracts/interfaces/draft-IERC6093.sol": {
-      "lastModificationDate": 1705329486014,
-      "contentHash": "4aefc698f77ecbace7f401257dfe182d",
-      "sourceName": "@openzeppelin/contracts/interfaces/draft-IERC6093.sol",
+    "/Users/rdonmez/Documents/fns-contracts/node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol": {
+      "lastModificationDate": 1705329487159,
+      "contentHash": "6a55c353946e471d9792965d06208295",
+      "sourceName": "@openzeppelin/contracts/utils/introspection/ERC165.sol",
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
-          "evmVersion": "paris",
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
+          "evmVersion": "paris",
           "outputSelection": {
             "*": {
               "*": [
@@ -1362,14 +711,14 @@
           }
         }
       },
-      "imports": [],
+      "imports": [
+        "./IERC165.sol"
+      ],
       "versionPragmas": [
         "^0.8.20"
       ],
       "artifacts": [
-        "IERC1155Errors",
-        "IERC20Errors",
-        "IERC721Errors"
+        "ERC165"
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/node_modules/@openzeppelin/contracts/utils/Strings.sol": {
@@ -1379,11 +728,11 @@
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
-          "evmVersion": "paris",
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
+          "evmVersion": "paris",
           "outputSelection": {
             "*": {
               "*": [
@@ -1418,11 +767,11 @@
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
-          "evmVersion": "paris",
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
+          "evmVersion": "paris",
           "outputSelection": {
             "*": {
               "*": [
@@ -1447,6 +796,44 @@
         "IERC721Receiver"
       ]
     },
+    "/Users/rdonmez/Documents/fns-contracts/node_modules/@openzeppelin/contracts/interfaces/draft-IERC6093.sol": {
+      "lastModificationDate": 1705329486014,
+      "contentHash": "4aefc698f77ecbace7f401257dfe182d",
+      "sourceName": "@openzeppelin/contracts/interfaces/draft-IERC6093.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IERC1155Errors",
+        "IERC20Errors",
+        "IERC721Errors"
+      ]
+    },
     "/Users/rdonmez/Documents/fns-contracts/node_modules/@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol": {
       "lastModificationDate": 1705329487996,
       "contentHash": "12c206f185cb951213799561fdcaa40d",
@@ -1454,11 +841,11 @@
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
-          "evmVersion": "paris",
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
+          "evmVersion": "paris",
           "outputSelection": {
             "*": {
               "*": [
@@ -1492,11 +879,11 @@
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
-          "evmVersion": "paris",
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
+          "evmVersion": "paris",
           "outputSelection": {
             "*": {
               "*": [
@@ -1528,11 +915,11 @@
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
-          "evmVersion": "paris",
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
+          "evmVersion": "paris",
           "outputSelection": {
             "*": {
               "*": [
@@ -1557,42 +944,6 @@
         "SignedMath"
       ]
     },
-    "/Users/rdonmez/Documents/fns-contracts/contracts/reverseRegistrar/IReverseRegistrar.sol": {
-      "lastModificationDate": 1705326316652,
-      "contentHash": "b92d5803d27f7cfe9c034c5dab6f3393",
-      "sourceName": "contracts/reverseRegistrar/IReverseRegistrar.sol",
-      "solcConfig": {
-        "version": "0.8.20",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.20"
-      ],
-      "artifacts": [
-        "IReverseRegistrar"
-      ]
-    },
     "/Users/rdonmez/Documents/fns-contracts/contracts/root/Controllable.sol": {
       "lastModificationDate": 1705324319629,
       "contentHash": "2d0513a8d7e17cf7f4aaac5fc1fc0308",
@@ -1600,11 +951,11 @@
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
-          "evmVersion": "paris",
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
+          "evmVersion": "paris",
           "outputSelection": {
             "*": {
               "*": [
@@ -1631,6 +982,711 @@
         "Controllable"
       ]
     },
+    "/Users/rdonmez/Documents/fns-contracts/contracts/reverseRegistrar/IReverseRegistrar.sol": {
+      "lastModificationDate": 1705326316652,
+      "contentHash": "b92d5803d27f7cfe9c034c5dab6f3393",
+      "sourceName": "contracts/reverseRegistrar/IReverseRegistrar.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IReverseRegistrar"
+      ]
+    },
+    "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/Resolver.sol": {
+      "lastModificationDate": 1705328498431,
+      "contentHash": "6dda1092e0977aecfe7c91846ab1b3e3",
+      "sourceName": "contracts/resolvers/Resolver.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/utils/introspection/IERC165.sol",
+        "./profiles/interfaces/IABIResolver.sol",
+        "./profiles/interfaces/IAddressResolver.sol",
+        "./profiles/interfaces/IAddrResolver.sol",
+        "./profiles/interfaces/IContentHashResolver.sol",
+        "./profiles/interfaces/IDNSRecordResolver.sol",
+        "./profiles/interfaces/IDNSZoneResolver.sol",
+        "./profiles/interfaces/IInterfaceResolver.sol",
+        "./profiles/interfaces/INameResolver.sol",
+        "./profiles/interfaces/IPubkeyResolver.sol",
+        "./profiles/interfaces/ITextResolver.sol",
+        "./profiles/interfaces/IExtendedResolver.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Resolver"
+      ]
+    },
+    "/Users/rdonmez/Documents/fns-contracts/contracts/zkfregistrar/StringUtils.sol": {
+      "lastModificationDate": 1705493368358,
+      "contentHash": "3a10f282536a1ba0719a0977de39cd36",
+      "sourceName": "contracts/zkfregistrar/StringUtils.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "StringUtils"
+      ]
+    },
+    "/Users/rdonmez/Documents/fns-contracts/contracts/reverseRegistrar/ReverseClaimer.sol": {
+      "lastModificationDate": 1705435737777,
+      "contentHash": "617be4a21f3c951ff322495f7af9f30b",
+      "sourceName": "contracts/reverseRegistrar/ReverseClaimer.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../registry/ENS.sol",
+        "../reverseRegistrar/IReverseRegistrar.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "ReverseClaimer"
+      ]
+    },
+    "/Users/rdonmez/Documents/fns-contracts/contracts/utils/ERC20Recoverable.sol": {
+      "lastModificationDate": 1705492376624,
+      "contentHash": "fe17f93b01b9fad828c1a20bbe962e13",
+      "sourceName": "contracts/utils/ERC20Recoverable.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/access/Ownable.sol",
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "ERC20Recoverable"
+      ]
+    },
+    "/Users/rdonmez/Documents/fns-contracts/contracts/zkfregistrar/IPriceOracle.sol": {
+      "lastModificationDate": 1705493368357,
+      "contentHash": "eadc5890cc839c0a0ee9431b3f3492b4",
+      "sourceName": "contracts/zkfregistrar/IPriceOracle.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IPriceOracle"
+      ]
+    },
+    "/Users/rdonmez/Documents/fns-contracts/contracts/zkfregistrar/IZKFRegistrarController.sol": {
+      "lastModificationDate": 1705429668921,
+      "contentHash": "e2a108d3d9fc983d74e4b4716086990e",
+      "sourceName": "contracts/zkfregistrar/IZKFRegistrarController.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IPriceOracle.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IZKFRegistrarController"
+      ]
+    },
+    "/Users/rdonmez/Documents/fns-contracts/node_modules/@openzeppelin/contracts/utils/Address.sol": {
+      "lastModificationDate": 1705329486015,
+      "contentHash": "79c699f80eb8a9b168cb34e37816f894",
+      "sourceName": "@openzeppelin/contracts/utils/Address.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Address"
+      ]
+    },
+    "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/interfaces/IAddrResolver.sol": {
+      "lastModificationDate": 1705588975030,
+      "contentHash": "e7f5877654fd80a002faa1b927c143e2",
+      "sourceName": "contracts/resolvers/profiles/interfaces/IAddrResolver.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IAddrResolver"
+      ]
+    },
+    "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/interfaces/IABIResolver.sol": {
+      "lastModificationDate": 1705588971702,
+      "contentHash": "2e2f4d4ab7b786182d8f6b7fe19093aa",
+      "sourceName": "contracts/resolvers/profiles/interfaces/IABIResolver.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IABIResolver"
+      ]
+    },
+    "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/interfaces/IContentHashResolver.sol": {
+      "lastModificationDate": 1705588978383,
+      "contentHash": "d05b28855d6acb127d6d7e84ef82a049",
+      "sourceName": "contracts/resolvers/profiles/interfaces/IContentHashResolver.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IContentHashResolver"
+      ]
+    },
+    "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/interfaces/IInterfaceResolver.sol": {
+      "lastModificationDate": 1705588981148,
+      "contentHash": "4350ac2877a1b553a0307d9b0ee80ffa",
+      "sourceName": "contracts/resolvers/profiles/interfaces/IInterfaceResolver.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IInterfaceResolver"
+      ]
+    },
+    "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/interfaces/IDNSZoneResolver.sol": {
+      "lastModificationDate": 1705328275266,
+      "contentHash": "7ae942c5314c2043f2036d71c44c6715",
+      "sourceName": "contracts/resolvers/profiles/interfaces/IDNSZoneResolver.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.8.4"
+      ],
+      "artifacts": [
+        "IDNSZoneResolver"
+      ]
+    },
+    "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/interfaces/INameResolver.sol": {
+      "lastModificationDate": 1705588984538,
+      "contentHash": "de060f57779c5b50a797e0d73266488a",
+      "sourceName": "contracts/resolvers/profiles/interfaces/INameResolver.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "INameResolver"
+      ]
+    },
+    "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/interfaces/IPubkeyResolver.sol": {
+      "lastModificationDate": 1705588988186,
+      "contentHash": "1de147a3a9abb36b4e6ba9269a213fbf",
+      "sourceName": "contracts/resolvers/profiles/interfaces/IPubkeyResolver.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IPubkeyResolver"
+      ]
+    },
+    "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/interfaces/ITextResolver.sol": {
+      "lastModificationDate": 1705588990938,
+      "contentHash": "14ae3b9b5820f6f773306d9ec8fd8c47",
+      "sourceName": "contracts/resolvers/profiles/interfaces/ITextResolver.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "ITextResolver"
+      ]
+    },
+    "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/interfaces/IDNSRecordResolver.sol": {
+      "lastModificationDate": 1705328262678,
+      "contentHash": "f9be162bff68e0104f45e7a016979196",
+      "sourceName": "contracts/resolvers/profiles/interfaces/IDNSRecordResolver.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IDNSRecordResolver"
+      ]
+    },
+    "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/interfaces/IExtendedResolver.sol": {
+      "lastModificationDate": 1705328102252,
+      "contentHash": "71ea7a7ac888bf7de035524162750a9a",
+      "sourceName": "contracts/resolvers/profiles/interfaces/IExtendedResolver.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IExtendedResolver"
+      ]
+    },
+    "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/interfaces/IAddressResolver.sol": {
+      "lastModificationDate": 1705328072314,
+      "contentHash": "6e9f4a9710996bdd907456126d02d606",
+      "sourceName": "contracts/resolvers/profiles/interfaces/IAddressResolver.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IAddressResolver"
+      ]
+    },
     "/Users/rdonmez/Documents/fns-contracts/node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol": {
       "lastModificationDate": 1705329487133,
       "contentHash": "5517c8678c18eb1a8ba58810e7ca39ca",
@@ -1638,11 +1694,11 @@
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
-          "evmVersion": "paris",
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
+          "evmVersion": "paris",
           "outputSelection": {
             "*": {
               "*": [
@@ -1667,285 +1723,6 @@
         "IERC20"
       ]
     },
-    "/Users/rdonmez/Documents/fns-contracts/contracts/zkfregistrar/StablePriceOracle.sol": {
-      "lastModificationDate": 1705489353996,
-      "contentHash": "9f8ff9e3784438f6807ac226b991b1f2",
-      "sourceName": "contracts/zkfregistrar/StablePriceOracle.sol",
-      "solcConfig": {
-        "version": "0.8.20",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "./IPriceOracle.sol",
-        "./StringUtils.sol",
-        "@openzeppelin/contracts/access/Ownable.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.20"
-      ],
-      "artifacts": [
-        "StablePriceOracle"
-      ]
-    },
-    "/Users/rdonmez/Documents/fns-contracts/contracts/wrapper/INameWrapper.sol": {
-      "lastModificationDate": 1705435956346,
-      "contentHash": "1090cb3c4c518f35b76b8c31b5713222",
-      "sourceName": "contracts/wrapper/INameWrapper.sol",
-      "solcConfig": {
-        "version": "0.8.20",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "../registry/ENS.sol",
-        "../zkfregistrar/IBaseRegistrar.sol",
-        "@openzeppelin/contracts/token/ERC1155/IERC1155.sol",
-        "./IMetadataService.sol",
-        "./INameWrapperUpgrade.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.20"
-      ],
-      "artifacts": [
-        "INameWrapper"
-      ]
-    },
-    "/Users/rdonmez/Documents/fns-contracts/contracts/wrapper/IMetadataService.sol": {
-      "lastModificationDate": 1705329190887,
-      "contentHash": "a4437e24a622bf947739be1992a01a6f",
-      "sourceName": "contracts/wrapper/IMetadataService.sol",
-      "solcConfig": {
-        "version": "0.8.20",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.20"
-      ],
-      "artifacts": [
-        "IMetadataService"
-      ]
-    },
-    "/Users/rdonmez/Documents/fns-contracts/contracts/wrapper/INameWrapperUpgrade.sol": {
-      "lastModificationDate": 1705329159542,
-      "contentHash": "548e2292dfc18f1daa758ad4cad6cfad",
-      "sourceName": "contracts/wrapper/INameWrapperUpgrade.sol",
-      "solcConfig": {
-        "version": "0.8.20",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.20"
-      ],
-      "artifacts": [
-        "INameWrapperUpgrade"
-      ]
-    },
-    "/Users/rdonmez/Documents/fns-contracts/node_modules/@openzeppelin/contracts/token/ERC1155/IERC1155.sol": {
-      "lastModificationDate": 1705329487131,
-      "contentHash": "d70aa5aeb17749b65a9bde4cce2bd72c",
-      "sourceName": "@openzeppelin/contracts/token/ERC1155/IERC1155.sol",
-      "solcConfig": {
-        "version": "0.8.20",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "../../utils/introspection/IERC165.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.20"
-      ],
-      "artifacts": [
-        "IERC1155"
-      ]
-    },
-    "/Users/rdonmez/Documents/fns-contracts/contracts/root/Root.sol": {
-      "lastModificationDate": 1705435829643,
-      "contentHash": "6860927319e9218c93736ac77f575a2b",
-      "sourceName": "contracts/root/Root.sol",
-      "solcConfig": {
-        "version": "0.8.20",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "../registry/ENS.sol",
-        "@openzeppelin/contracts/access/Ownable.sol",
-        "./Controllable.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.20"
-      ],
-      "artifacts": [
-        "Root"
-      ]
-    },
-    "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/PublicResolver.sol": {
-      "lastModificationDate": 1705589318785,
-      "contentHash": "15766cc51667b2d6d24358823f51318c",
-      "sourceName": "contracts/resolvers/PublicResolver.sol",
-      "solcConfig": {
-        "version": "0.8.20",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "../registry/ENS.sol",
-        "./profiles/ABIResolver.sol",
-        "./profiles/AddrResolver.sol",
-        "./profiles/ContentHashResolver.sol",
-        "./profiles/DNSResolver.sol",
-        "./profiles/InterfaceResolver.sol",
-        "./profiles/NameResolver.sol",
-        "./profiles/PubkeyResolver.sol",
-        "./profiles/TextResolver.sol",
-        "./Multicallable.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.20"
-      ],
-      "artifacts": [
-        "PublicResolver"
-      ]
-    },
     "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/ABIResolver.sol": {
       "lastModificationDate": 1705588936841,
       "contentHash": "8439510cf2f6283a9154dc1167670370",
@@ -1953,11 +1730,11 @@
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
-          "evmVersion": "paris",
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
+          "evmVersion": "paris",
           "outputSelection": {
             "*": {
               "*": [
@@ -1985,6 +1762,46 @@
         "ABIResolver"
       ]
     },
+    "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/AddrResolver.sol": {
+      "lastModificationDate": 1705588943637,
+      "contentHash": "26a1282a165d1f4c511cf0f3a4c8f239",
+      "sourceName": "contracts/resolvers/profiles/AddrResolver.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../ResolverBase.sol",
+        "./interfaces/IAddrResolver.sol",
+        "./interfaces/IAddressResolver.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "AddrResolver"
+      ]
+    },
     "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/ContentHashResolver.sol": {
       "lastModificationDate": 1705588948857,
       "contentHash": "1bba6b75fe4497209deaac3dda2313b2",
@@ -1992,11 +1809,11 @@
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
-          "evmVersion": "paris",
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
+          "evmVersion": "paris",
           "outputSelection": {
             "*": {
               "*": [
@@ -2024,6 +1841,47 @@
         "ContentHashResolver"
       ]
     },
+    "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/DNSResolver.sol": {
+      "lastModificationDate": 1705329532220,
+      "contentHash": "e5b925a4ca94270e68b12ab1a3a4acde",
+      "sourceName": "contracts/resolvers/profiles/DNSResolver.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../ResolverBase.sol",
+        "../../dnssec-oracle/RRUtils.sol",
+        "./interfaces/IDNSRecordResolver.sol",
+        "./interfaces/IDNSZoneResolver.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "DNSResolver"
+      ]
+    },
     "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/InterfaceResolver.sol": {
       "lastModificationDate": 1705588955869,
       "contentHash": "6f0d8ec7c290044cf014f32088434e19",
@@ -2031,11 +1889,11 @@
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
-          "evmVersion": "paris",
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
+          "evmVersion": "paris",
           "outputSelection": {
             "*": {
               "*": [
@@ -2072,11 +1930,11 @@
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
-          "evmVersion": "paris",
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
+          "evmVersion": "paris",
           "outputSelection": {
             "*": {
               "*": [
@@ -2104,85 +1962,6 @@
         "NameResolver"
       ]
     },
-    "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/AddrResolver.sol": {
-      "lastModificationDate": 1705588943637,
-      "contentHash": "26a1282a165d1f4c511cf0f3a4c8f239",
-      "sourceName": "contracts/resolvers/profiles/AddrResolver.sol",
-      "solcConfig": {
-        "version": "0.8.20",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "../ResolverBase.sol",
-        "./interfaces/IAddrResolver.sol",
-        "./interfaces/IAddressResolver.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.20"
-      ],
-      "artifacts": [
-        "AddrResolver"
-      ]
-    },
-    "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/Multicallable.sol": {
-      "lastModificationDate": 1705327199706,
-      "contentHash": "350d6fc242be85c749cf365faabd94ce",
-      "sourceName": "contracts/resolvers/Multicallable.sol",
-      "solcConfig": {
-        "version": "0.8.20",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "./IMulticallable.sol",
-        "@openzeppelin/contracts/utils/introspection/ERC165.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.20"
-      ],
-      "artifacts": [
-        "Multicallable"
-      ]
-    },
     "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/PubkeyResolver.sol": {
       "lastModificationDate": 1705588963868,
       "contentHash": "d3afb6eaa60714a19b0054d406b6489b",
@@ -2190,11 +1969,11 @@
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
-          "evmVersion": "paris",
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
+          "evmVersion": "paris",
           "outputSelection": {
             "*": {
               "*": [
@@ -2229,11 +2008,11 @@
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
-          "evmVersion": "paris",
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
+          "evmVersion": "paris",
           "outputSelection": {
             "*": {
               "*": [
@@ -2261,6 +2040,231 @@
         "TextResolver"
       ]
     },
+    "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/Multicallable.sol": {
+      "lastModificationDate": 1705327199706,
+      "contentHash": "350d6fc242be85c749cf365faabd94ce",
+      "sourceName": "contracts/resolvers/Multicallable.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IMulticallable.sol",
+        "@openzeppelin/contracts/utils/introspection/ERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Multicallable"
+      ]
+    },
+    "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/ResolverBase.sol": {
+      "lastModificationDate": 1705592726885,
+      "contentHash": "0a6269ba83a5792e620fbf95cc85fc9d",
+      "sourceName": "contracts/resolvers/ResolverBase.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/utils/introspection/ERC165.sol",
+        "./profiles/interfaces/IVersionableResolver.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "ResolverBase"
+      ]
+    },
+    "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/interfaces/IVersionableResolver.sol": {
+      "lastModificationDate": 1705328136446,
+      "contentHash": "2ef84231523c76b7e341cf61ac8b1655",
+      "sourceName": "contracts/resolvers/profiles/interfaces/IVersionableResolver.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IVersionableResolver"
+      ]
+    },
+    "/Users/rdonmez/Documents/fns-contracts/contracts/dnssec-oracle/RRUtils.sol": {
+      "lastModificationDate": 1705329547451,
+      "contentHash": "e47cb751d0f53d85d5fb49a82ee8ce93",
+      "sourceName": "contracts/dnssec-oracle/RRUtils.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./BytesUtils.sol",
+        "@ensdomains/buffer/contracts/Buffer.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "RRUtils"
+      ]
+    },
+    "/Users/rdonmez/Documents/fns-contracts/contracts/dnssec-oracle/BytesUtils.sol": {
+      "lastModificationDate": 1705329543635,
+      "contentHash": "a511e9e56fd90bb74a76adc3a688fe5d",
+      "sourceName": "contracts/dnssec-oracle/BytesUtils.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "BytesUtils"
+      ]
+    },
+    "/Users/rdonmez/Documents/fns-contracts/node_modules/@ensdomains/buffer/contracts/Buffer.sol": {
+      "lastModificationDate": 1705329486079,
+      "contentHash": "d3d00f20f206848f1e90d596ebcc557b",
+      "sourceName": "@ensdomains/buffer/contracts/Buffer.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.4"
+      ],
+      "artifacts": [
+        "Buffer"
+      ]
+    },
     "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/IMulticallable.sol": {
       "lastModificationDate": 1705327196755,
       "contentHash": "d48a17145ec41de476d04d37ee21938c",
@@ -2268,11 +2272,11 @@
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
-          "evmVersion": "paris",
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
+          "evmVersion": "paris",
           "outputSelection": {
             "*": {
               "*": [
@@ -2297,6 +2301,236 @@
         "IMulticallable"
       ]
     },
+    "/Users/rdonmez/Documents/fns-contracts/node_modules/@openzeppelin/contracts/token/ERC1155/IERC1155.sol": {
+      "lastModificationDate": 1705329487131,
+      "contentHash": "d70aa5aeb17749b65a9bde4cce2bd72c",
+      "sourceName": "@openzeppelin/contracts/token/ERC1155/IERC1155.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../utils/introspection/IERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IERC1155"
+      ]
+    },
+    "/Users/rdonmez/Documents/fns-contracts/contracts/wrapper/INameWrapper.sol": {
+      "lastModificationDate": 1705435956346,
+      "contentHash": "1090cb3c4c518f35b76b8c31b5713222",
+      "sourceName": "contracts/wrapper/INameWrapper.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../registry/ENS.sol",
+        "../zkfregistrar/IBaseRegistrar.sol",
+        "@openzeppelin/contracts/token/ERC1155/IERC1155.sol",
+        "./IMetadataService.sol",
+        "./INameWrapperUpgrade.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "INameWrapper"
+      ]
+    },
+    "/Users/rdonmez/Documents/fns-contracts/contracts/wrapper/INameWrapperUpgrade.sol": {
+      "lastModificationDate": 1705329159542,
+      "contentHash": "548e2292dfc18f1daa758ad4cad6cfad",
+      "sourceName": "contracts/wrapper/INameWrapperUpgrade.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "INameWrapperUpgrade"
+      ]
+    },
+    "/Users/rdonmez/Documents/fns-contracts/contracts/wrapper/IMetadataService.sol": {
+      "lastModificationDate": 1705329190887,
+      "contentHash": "a4437e24a622bf947739be1992a01a6f",
+      "sourceName": "contracts/wrapper/IMetadataService.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IMetadataService"
+      ]
+    },
+    "/Users/rdonmez/Documents/fns-contracts/contracts/wrapper/Controllable.sol": {
+      "lastModificationDate": 1705427568163,
+      "contentHash": "b448118fb51691ec5e0bdfcb93c41f80",
+      "sourceName": "contracts/wrapper/Controllable.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/access/Ownable.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Controllable"
+      ]
+    },
+    "/Users/rdonmez/Documents/fns-contracts/contracts/root/Root.sol": {
+      "lastModificationDate": 1705435829643,
+      "contentHash": "6860927319e9218c93736ac77f575a2b",
+      "sourceName": "contracts/root/Root.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../registry/ENS.sol",
+        "@openzeppelin/contracts/access/Ownable.sol",
+        "./Controllable.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Root"
+      ]
+    },
     "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/OwnedResolver.sol": {
       "lastModificationDate": 1705329752133,
       "contentHash": "6f2128e2c3610dfe0d6ba4f4b3572d6c",
@@ -2304,11 +2538,11 @@
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
-          "evmVersion": "paris",
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
+          "evmVersion": "paris",
           "outputSelection": {
             "*": {
               "*": [
@@ -2351,11 +2585,11 @@
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
-          "evmVersion": "paris",
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
+          "evmVersion": "paris",
           "outputSelection": {
             "*": {
               "*": [
@@ -2387,11 +2621,11 @@
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
-          "evmVersion": "paris",
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
+          "evmVersion": "paris",
           "outputSelection": {
             "*": {
               "*": [
@@ -2429,11 +2663,11 @@
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
-          "evmVersion": "paris",
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
+          "evmVersion": "paris",
           "outputSelection": {
             "*": {
               "*": [
@@ -2465,11 +2699,11 @@
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
-          "evmVersion": "paris",
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
+          "evmVersion": "paris",
           "outputSelection": {
             "*": {
               "*": [
@@ -2501,11 +2735,11 @@
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
-          "evmVersion": "paris",
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
+          "evmVersion": "paris",
           "outputSelection": {
             "*": {
               "*": [
@@ -2532,159 +2766,6 @@
         "TestRegistrar"
       ]
     },
-    "/Users/rdonmez/Documents/fns-contracts/contracts/registry/FIFSRegister.sol": {
-      "lastModificationDate": 1705434493346,
-      "contentHash": "003b6fc26827b2cb57173a10db3e0db3",
-      "sourceName": "contracts/registry/FIFSRegister.sol",
-      "solcConfig": {
-        "version": "0.8.20",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "./ENS.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.20"
-      ],
-      "artifacts": [
-        "FIFSRegistrar"
-      ]
-    },
-    "/Users/rdonmez/Documents/fns-contracts/contracts/registry/ENSRegistryWithFallback.sol": {
-      "lastModificationDate": 1705434467545,
-      "contentHash": "9a334b5ac32e8ce13df388abb7e2df9a",
-      "sourceName": "contracts/registry/ENSRegistryWithFallback.sol",
-      "solcConfig": {
-        "version": "0.8.20",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "./ENS.sol",
-        "./ENSRegistry.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.20"
-      ],
-      "artifacts": [
-        "ENSRegistryWithFallback"
-      ]
-    },
-    "/Users/rdonmez/Documents/fns-contracts/contracts/registry/ENSRegistry.sol": {
-      "lastModificationDate": 1705580097425,
-      "contentHash": "3701094014f93ce4727abbd76c4513d2",
-      "sourceName": "contracts/registry/ENSRegistry.sol",
-      "solcConfig": {
-        "version": "0.8.20",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "./ENS.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.20"
-      ],
-      "artifacts": [
-        "ENSRegistry"
-      ]
-    },
-    "/Users/rdonmez/Documents/fns-contracts/contracts/wrapper/Controllable.sol": {
-      "lastModificationDate": 1705427568163,
-      "contentHash": "b448118fb51691ec5e0bdfcb93c41f80",
-      "sourceName": "contracts/wrapper/Controllable.sol",
-      "solcConfig": {
-        "version": "0.8.20",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "@openzeppelin/contracts/access/Ownable.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.20"
-      ],
-      "artifacts": [
-        "Controllable"
-      ]
-    },
     "/Users/rdonmez/Documents/fns-contracts/contracts/root/Ownable.sol": {
       "lastModificationDate": 1705324322501,
       "contentHash": "3dace1e3fb1d1cf61d3b9458481d3c8e",
@@ -2692,11 +2773,11 @@
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
-          "evmVersion": "paris",
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
+          "evmVersion": "paris",
           "outputSelection": {
             "*": {
               "*": [
@@ -2728,11 +2809,11 @@
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
-          "evmVersion": "paris",
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
+          "evmVersion": "paris",
           "outputSelection": {
             "*": {
               "*": [
@@ -2764,11 +2845,11 @@
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
-          "evmVersion": "paris",
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
+          "evmVersion": "paris",
           "outputSelection": {
             "*": {
               "*": [
@@ -2800,11 +2881,11 @@
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
-          "evmVersion": "paris",
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
+          "evmVersion": "paris",
           "outputSelection": {
             "*": {
               "*": [
@@ -2827,42 +2908,6 @@
       ],
       "artifacts": [
         "SafeMath"
-      ]
-    },
-    "/Users/rdonmez/Documents/fns-contracts/node_modules/hardhat/console.sol": {
-      "lastModificationDate": 1705330292748,
-      "contentHash": "896f68942c3a20e9ae3c3c5bfd3add54",
-      "sourceName": "hardhat/console.sol",
-      "solcConfig": {
-        "version": "0.8.20",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.4.22 <0.9.0"
-      ],
-      "artifacts": [
-        "console"
       ]
     }
   }

@@ -80,6 +80,19 @@ describe("Controller Contract", function () {
         await expect( zkfRegistrarController.connect(user1).withdraw() ).to.be.reverted;
     });
 
+    it("Should change base uri by the owner", async function() {
+
+        const [deployer, user1] = await ethers.getSigners(); 
+        
+        await expect( baseRegistrarImplementation.connect(deployer).setBaseUri("http://test.com/") );
+    });
+
+    it("Should not change base uri by another address", async function() { 
+        
+        const [deployer, user1] = await ethers.getSigners(); 
+
+        await expect( baseRegistrarImplementation.connect(user1).setBaseUri("http://test.com/") ).to.be.reverted;
+    });
     
 
     async function deploy(deployer) {

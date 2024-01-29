@@ -18,6 +18,7 @@
     "@types/mocha": "^10.0.6",
     "ethers": "^6.10.0",
     "hardhat": "^2.19.4",
+    "hardhat-gas-reporter": "^1.0.9",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   }

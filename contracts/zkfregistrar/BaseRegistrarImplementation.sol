@@ -185,7 +185,7 @@ contract BaseRegistrarImplementation is ERC721, IBaseRegistrar, Ownable {
         return expiries[id];
     }
 
-    function setBaseUri(string memory uri) external onlyOwner () {
+    function setBaseUri(string memory uri) public onlyOwner () {
         baseUri = uri;
     }
  

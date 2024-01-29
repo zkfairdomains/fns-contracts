@@ -9,6 +9,17 @@ const ZERO_HASH = "0x00000000000000000000000000000000000000000000000000000000000
 
 async function main() {
  
+   await deploy();
+   
+};
+
+async function deploy (){
+  const fnsDeployer = await ethers.deployContract("FNSDeployer");
+  await fnsDeployer.waitForDeployment();
+  console.log(`FNSDeployer Deployed: ${fnsDeployer.target}`);
+} 
+
+async function deployWith() {
   const [deployer] = await ethers.getSigners();
     
   const registry = await deployRegistry();
@@ -33,7 +44,7 @@ async function main() {
  
   const stablePriceOracle = await deployStablePriceOracle();
 
-  await setupStablePriceOracle(stablePriceOracle, ethers.parseEther("0.000000000000000025"), ethers.parseEther("0.000000000000000025"), ethers.parseEther("0.000000000000000025"), ethers.parseEther("0.000000000000000025"), ethers.parseEther("0.000000000000000025"));
+  await setupStablePriceOracle(stablePriceOracle, ethers.parseEther("0.00001582318"), ethers.parseEther("0.00000631024"), ethers.parseEther("0.00000313926"), ethers.parseEther("0.00000155377"), ethers.parseEther("1.5854896"));
 
   const zkfRegistrarController = await deployZKFRegistrarController(baseRegistrarImplementation, stablePriceOracle, 10, 86400, reverseRegistrar, registryWithFallback);
   
@@ -42,9 +53,7 @@ async function main() {
   const publicResolver  = await deployPublicResolver(registryWithFallback, zkfRegistrarController, reverseRegistrar);
 
   await setupResolver(registryWithFallback, publicResolver)
- 
-
-};
+}
  
 async function deployRegistry() { 
   const registry = await ethers.deployContract("ENSRegistry");
