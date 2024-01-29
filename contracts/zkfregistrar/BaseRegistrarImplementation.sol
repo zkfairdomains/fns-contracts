@@ -34,6 +34,8 @@ contract BaseRegistrarImplementation is ERC721, IBaseRegistrar, Ownable {
     bytes4 private constant RECLAIM_ID =
         bytes4(keccak256("reclaim(uint256,address)"));
 
+    string public baseUri;
+
     /**
      * v2.1.3 version of _isApprovedOrOwner which calls ownerOf(tokenId) and takes grace period into consideration instead of ERC721.ownerOf(tokenId);
      * https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v2.1.3/contracts/token/ERC721/ERC721.sol#L187
@@ -53,7 +55,7 @@ contract BaseRegistrarImplementation is ERC721, IBaseRegistrar, Ownable {
             isApprovedForAll(owner, spender));
     }
 
-    constructor(ENS _ens, bytes32 _baseNode) ERC721("ZKFair Name Service", "") Ownable(msg.sender) {
+    constructor(ENS _ens, bytes32 _baseNode) ERC721("ZKFair Name Service", "ZKFNS") Ownable(msg.sender) {
         ens = _ens;
         baseNode = _baseNode;
     }
@@ -181,6 +183,14 @@ contract BaseRegistrarImplementation is ERC721, IBaseRegistrar, Ownable {
         emit NameRenewed(id, expiries[id]);
         
         return expiries[id];
+    }
+
+    function setBaseUri(string memory uri) external onlyOwner () {
+        baseUri = uri;
+    }
+ 
+    function _baseURI() internal view override returns (string memory) {
+        return baseUri;
     }
 
     /**

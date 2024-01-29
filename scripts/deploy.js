@@ -63,14 +63,14 @@ async function deployRegistryWithFallback(registry) {
 async function deployRegistrar(registry, tld) { 
   const registrar = await ethers.deployContract("FIFSRegistrar", [registry.target, namehash.hash(tld)]); 
   await registrar.waitForDeployment();
-  console.log(`FIFS Registrar Deployed: ${registrar.target} with the params: ${registry.target}, ${namehash.hash(tld)}`)
+  console.log(`FIFSRegistrar Deployed: ${registrar.target} with the params: ${registry.target}, ${namehash.hash(tld)}`)
   return registrar;
 }
  
 async function deployReverseRegistrar(registry) { 
   const reverseRegistrar = await ethers.deployContract("ReverseRegistrar", [registry.target]);
   await reverseRegistrar.waitForDeployment();
-  console.log(`Reverse Registrar Deployed: ${reverseRegistrar.target} with the params: ${registry.target}`);
+  console.log(`ReverseRegistrar Deployed: ${reverseRegistrar.target} with the params: ${registry.target}`);
   return reverseRegistrar;
 }
   
@@ -98,7 +98,7 @@ async function deployZKFRegistrarController(baseRegistrarImplementation, stableP
 async function deployPublicResolver(registry, zkfRegistrarController, reverseRegistrar) { 
   const publicResolver = await ethers.deployContract("PublicResolver",[registry.target, zkfRegistrarController.target, reverseRegistrar.target]);
   await publicResolver.waitForDeployment();
-  console.log(`Public Resolver Deployed: ${publicResolver.target} with the params; registry: ${registry.target} ${zkfRegistrarController.target} ${reverseRegistrar.target}`)
+  console.log(`PublicResolver Deployed: ${publicResolver.target} with the params; registry: ${registry.target} ${zkfRegistrarController.target} ${reverseRegistrar.target}`)
   return publicResolver;
 }
 

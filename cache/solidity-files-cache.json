@@ -797,8 +797,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/zkfregistrar/BaseRegistrarImplementation.sol": {
-      "lastModificationDate": 1705589882439,
-      "contentHash": "0316ad6fe3c7a3496be25902cd8e2fa0",
+      "lastModificationDate": 1706527424553,
+      "contentHash": "8a72dab09c033020c710b034d4b3bb74",
       "sourceName": "contracts/zkfregistrar/BaseRegistrarImplementation.sol",
       "solcConfig": {
         "version": "0.8.20",
