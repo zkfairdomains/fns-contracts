@@ -31,7 +31,6 @@ contract FNSDeployer {
         ensRegistry = new ENSRegistry();
 
         ensRegistryWithFallback = new ENSRegistryWithFallback(ensRegistry);
-        //ensRegistryWithFallback.setSubnodeOwner(bytes32(0), REVERSE_REGISTRAR_LABEL, msg.sender);
         ensRegistryWithFallback.setSubnodeOwner(bytes32(0), RESOLVER_LABEL, address(this));
 
         // fifs registrar
@@ -44,7 +43,7 @@ contract FNSDeployer {
         // setup registry
         ensRegistryWithFallback.setSubnodeOwner(bytes32(0), REVERSE_REGISTRAR_LABEL, address(this));
         ensRegistryWithFallback.setSubnodeOwner(namehash(bytes32(0), REVERSE_REGISTRAR_LABEL), ADDR_LABEL, address(reverseRegistrar));
-
+        
         // base registrar (erc721)
         baseRegistrarImplementation = new BaseRegistrarImplementation(ensRegistryWithFallback, namehash(bytes32(0), TLD_LABEL));
         // setup base registrar (this is not necessary)
@@ -54,7 +53,7 @@ contract FNSDeployer {
         stablePriceOracle= new StablePriceOracle();
 
         // registrar controller
-        zkfRegistrarController = new ZKFRegistrarController(baseRegistrarImplementation, stablePriceOracle, 15, 86400, reverseRegistrar, ensRegistryWithFallback);
+        zkfRegistrarController = new ZKFRegistrarController(baseRegistrarImplementation, stablePriceOracle, 5, 86400, reverseRegistrar, ensRegistryWithFallback);
         // setup controller
         baseRegistrarImplementation.addController(address(zkfRegistrarController));
         reverseRegistrar.setController(address(zkfRegistrarController), true);

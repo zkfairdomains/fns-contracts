@@ -45,8 +45,8 @@ contract ZKFRegistrarController is
     uint64 private constant MAX_EXPIRY = type(uint64).max;
     BaseRegistrarImplementation immutable base;
     IPriceOracle public prices;
-    uint256 public immutable minCommitmentAge;
-    uint256 public immutable maxCommitmentAge;
+    uint256 public minCommitmentAge;
+    uint256 public maxCommitmentAge;
     ReverseRegistrar public immutable reverseRegistrar; 
 
     mapping(bytes32 => uint256) public commitments;
@@ -285,5 +285,13 @@ contract ZKFRegistrarController is
             resolver,
             string.concat(name, ".zkf")
         );
+    }
+
+    function setMinCommitAge(uint256 age) external {
+        minCommitmentAge = age;
+    }
+
+     function setMaxCommitAge(uint256 age) external {
+        maxCommitmentAge = age;
     }
 }

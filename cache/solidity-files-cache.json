@@ -38,8 +38,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/FNSDeployer.sol": {
-      "lastModificationDate": 1706552087843,
-      "contentHash": "609a1cd74673423b5245485afb66feda",
+      "lastModificationDate": 1706638376281,
+      "contentHash": "206861abceaac72f9407ca7339505a40",
       "sourceName": "contracts/FNSDeployer.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -281,8 +281,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/zkfregistrar/ZKFRegistrarController.sol": {
-      "lastModificationDate": 1705592714206,
-      "contentHash": "a91dc9f5afe967d8580da5e21f12aa66",
+      "lastModificationDate": 1706636739401,
+      "contentHash": "92d598f072f781a29b36791848d92ca3",
       "sourceName": "contracts/zkfregistrar/ZKFRegistrarController.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -330,7 +330,7 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/zkfregistrar/StablePriceOracle.sol": {
-      "lastModificationDate": 1705493325569,
+      "lastModificationDate": 1706638357126,
       "contentHash": "9f8ff9e3784438f6807ac226b991b1f2",
       "sourceName": "contracts/zkfregistrar/StablePriceOracle.sol",
       "solcConfig": {

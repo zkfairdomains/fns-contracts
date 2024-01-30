@@ -9,7 +9,7 @@ const ZERO_HASH = "0x00000000000000000000000000000000000000000000000000000000000
 
 async function main() {
  
-   await deploy();
+   await deployWith();
    
 };
 
@@ -44,9 +44,9 @@ async function deployWith() {
  
   const stablePriceOracle = await deployStablePriceOracle();
 
-  await setupStablePriceOracle(stablePriceOracle, ethers.parseEther("0.00001582318"), ethers.parseEther("0.00000631024"), ethers.parseEther("0.00000313926"), ethers.parseEther("0.00000155377"), ethers.parseEther("1.5854896"));
+  //await setupStablePriceOracle(stablePriceOracle, ethers.parseEther("0.00001582318"), ethers.parseEther("0.00000631024"), ethers.parseEther("0.00000313926"), ethers.parseEther("0.00000155377"), ethers.parseEther("1.5854896"));
 
-  const zkfRegistrarController = await deployZKFRegistrarController(baseRegistrarImplementation, stablePriceOracle, 10, 86400, reverseRegistrar, registryWithFallback);
+  const zkfRegistrarController = await deployZKFRegistrarController(baseRegistrarImplementation, stablePriceOracle, 5, 86400, reverseRegistrar, registryWithFallback);
   
   await setupZKFRegistrarController(reverseRegistrar, baseRegistrarImplementation, zkfRegistrarController);
   
@@ -86,7 +86,7 @@ async function deployReverseRegistrar(registry) {
 async function deployBaseRegistrarImplementation(registry) { 
   const baseRegistrarImplementation = await ethers.deployContract("BaseRegistrarImplementation",[registry.target, namehash.hash(tld)]);
   await baseRegistrarImplementation.waitForDeployment();
-  console.log(`BaseRegistrarImplementation Deployed: ${baseRegistrarImplementation.target} with the params: ${registry.target}, ${namehash.hash(tld)}`)
+  console.log(`BaseRegistrarImplementation Deployed: ${baseRegistrarImplementation.target} with the params: ${registry.target} ${namehash.hash(tld)}`)
   return baseRegistrarImplementation;
 }
 
@@ -107,7 +107,7 @@ async function deployZKFRegistrarController(baseRegistrarImplementation, stableP
 async function deployPublicResolver(registry, zkfRegistrarController, reverseRegistrar) { 
   const publicResolver = await ethers.deployContract("PublicResolver",[registry.target, zkfRegistrarController.target, reverseRegistrar.target]);
   await publicResolver.waitForDeployment();
-  console.log(`PublicResolver Deployed: ${publicResolver.target} with the params; registry: ${registry.target} ${zkfRegistrarController.target} ${reverseRegistrar.target}`)
+  console.log(`PublicResolver Deployed: ${publicResolver.target} with the params; ${registry.target} ${zkfRegistrarController.target} ${reverseRegistrar.target}`)
   return publicResolver;
 }
 
