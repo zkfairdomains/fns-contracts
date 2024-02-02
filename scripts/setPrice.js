@@ -2,57 +2,61 @@ const { parseEther, toBigInt, formatEther, parseUnits } = require("ethers");
 const {ethers, utils, BigNumber } = require("hardhat");
 require("@nomicfoundation/hardhat-ethers");
 
+function getPrice(n) {
+    return 100 * n;
+};
 
 async function main() {
  
     const [deployer] = await ethers.getSigners(); 
 
-    const stablePriceOracle = await ethers.getContractAt("StablePriceOracle", process.env.STABLE_PRICE_ORACLE_CONTRACT_ADDRESS);
-      
-    console.log("price1Letter: "+ await stablePriceOracle.price1Letter());
-    console.log("price2Letter: "+ await stablePriceOracle.price2Letter());
-    console.log("price3Letter: "+ await stablePriceOracle.price3Letter());
-    console.log("price4Letter: "+ await stablePriceOracle.price4Letter());
-    console.log("price5Letter: "+ await stablePriceOracle.price5Letter());
-
+    const stablePriceOracle = await ethers.getContractAt("StablePriceOracle", "0x20044e113aa9aEADB3b4d7C068fc28a2307A7D2c");
+       
     console.log("----------------------------------------------------------");
 
     // set prices
-    const oneYearDuration =  toBigInt((1 * 60 * 60 * 24 * 365));
-    const ether999 = parseEther("999");
-    const ether499 = parseEther("499");
-    const ether99 = parseEther("99");
-    const ether49 = parseEther("49");
-    const ether5 = parseEther("5");
+    const oneYearDuration =  toBigInt(1 * 60 * 60 * 24 * 365);
+     
 
-    const price1Letter = ether999 / oneYearDuration;
-    const price2Letter = ether999 / oneYearDuration;
-    const price3Letter = ether499 / oneYearDuration;
-    const price4Letter = ether49 / oneYearDuration;
-    const price5Letter = ether5 / oneYearDuration;
-
+    const price1Letter = (toBigInt(toBigInt(499) ** 18n) / oneYearDuration)
+    const price2Letter = (toBigInt(toBigInt(499) ** 18n) / oneYearDuration)
+    const price3Letter = (toBigInt(toBigInt(199) ** 18n) / oneYearDuration)
+    const price4Letter = (toBigInt(toBigInt(49) ** 18n) / oneYearDuration)
+    const price5Letter = (toBigInt(toBigInt(5) ** 18n) / oneYearDuration)
+    
+ 
     
     console.log("oneYearDuration: "+ oneYearDuration);
-    console.log("oneEther:"+ ether5); 
-    console.log( "price1Letter per duration:"+ ethers.parseEther(price1Letter.toString()) ); 
-    console.log( "price2Letter per duration:"+ ethers.parseEther(price2Letter.toString()) ); 
-    console.log( "price3Letter per duration:"+ ethers.parseEther(price3Letter.toString()) ); 
-    console.log( "price4Letter per duration:"+ ethers.parseEther(price4Letter.toString()) ); 
-    console.log( "price5Letter per duration:"+ ethers.parseEther(price5Letter.toString()) ); 
+      
+    console.log( "Send price1Letter:"+ (price1Letter)); 
+    console.log( "Send price2Letter:"+ (price2Letter)); 
+    console.log( "Send price3Letter:"+ (price3Letter)); 
+    console.log( "Send price4Letter:"+ (price4Letter)); 
+    console.log( "Send price5Letter:"+ (price5Letter)); 
+    console.log("------------------")
+    
+    console.log(parseEther("0.000000000000158231"));
+    console.log(parseEther("0.000000000000158231"));
+    console.log(parseEther("0.000000000000063102"));
+    console.log(parseEther("0.000000000000015537"));
+    console.log(parseEther("0.000000000000001585"));
 
-    console.log( "Format price1Letter:"+ ethers.formatUnits(price1Letter * oneYearDuration) ); 
-    console.log( "Format price2Letter:"+ ethers.formatUnits(price2Letter * oneYearDuration) ); 
-    console.log( "Format price3Letter:"+ ethers.formatUnits(price3Letter * oneYearDuration) ); 
-    console.log( "Format price4Letter:"+ ethers.formatUnits(price4Letter * oneYearDuration) ); 
-    console.log( "Format price5Letter:"+ ethers.formatUnits(price5Letter * oneYearDuration) ); 
+    console.log(parseEther("0.000000000000158231").toString());
+    console.log(parseEther("0.000000000000158231").toString());
+    console.log(parseEther("0.000000000000063102").toString());
+    console.log(parseEther("0.000000000000015537").toString());
+    console.log(parseEther("0.000000000000001585").toString());
 
-    await stablePriceOracle.connect(deployer).setPrices([[
-        ethers.parseEther(price1Letter.toString()), 
-        ethers.parseEther(price2Letter.toString()),
-        ethers.parseEther(price3Letter.toString()), 
-        ethers.parseEther(price4Letter.toString()), 
-        ethers.parseEther(price5Letter.toString())
-    ]], { from: deployer.address })
+
+    await stablePriceOracle.setPrices([
+        parseEther("0.000000000000158231"), 
+        parseEther("0.000000000000158231"), 
+        parseEther("0.000000000000063102"),
+        parseEther("0.000000000000015537"), 
+        parseEther("0.000000000000001585")
+    ]);
+
+    
 };
 
  main().catch((error) => {

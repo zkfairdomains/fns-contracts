@@ -1,8 +1,11 @@
 require("dotenv").config();
-require("@nomicfoundation/hardhat-toolbox");   
-
+//require("@nomicfoundation/hardhat-toolbox");
+//require("@nomiclabs/hardhat-waffle");
+require("@nomiclabs/hardhat-etherscan");
+require('hardhat-deploy');
 
 /** @type import('hardhat/config').HardhatUserConfig */
+
 module.exports = {
     solidity: {
         compilers: [
@@ -38,7 +41,21 @@ module.exports = {
             allowUnlimitedContractSize: true,
         }
     },
-    etherscan: {
-        apiKey: "FS1QSVDXCPUFGE1VCX74EQJKZ4JG8WE8SI",
+    sourcify: {
+      enabled: true
     },
+    etherscan: {
+        apiKey: process.env.ETHER_SCAN_API_KEY,
+        customChains: [
+          {
+            network: "zkfair",
+            chainId: 42766,
+            urls: {
+              apiURL: "https://scan.zkfair.io/api/?module=contract&action=verify",
+              browserURL: "https://scan.zkfair.io"
+            }
+          }
+        ]
+    },
+    
 };

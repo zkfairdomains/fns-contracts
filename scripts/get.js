@@ -5,24 +5,12 @@ require("@nomicfoundation/hardhat-ethers");
 
 async function main() {
   
-    const fnsDeployer = await ethers.getContractAt("FNSDeployer", process.env.FNS_DEPLOYER_CONTRACT_ADDRESS);
-    const baseRegistrarImplementation =  await fnsDeployer.baseRegistrarImplementation();
-    const ensRegistry =  await fnsDeployer.ensRegistry();
-    const ensRegistryWithFallback =  await fnsDeployer.ensRegistryWithFallback();
-    const fifsRegistrar =  await fnsDeployer.fifsRegistrar();
-    const publicResolver =  await fnsDeployer.publicResolver();
-    const reverseRegistrar =  await fnsDeployer.reverseRegistrar();
-    const _stablePriceOracle =  await fnsDeployer.stablePriceOracle();
-    const zkfRegistrarController =  await fnsDeployer.zkfRegistrarController();
+    const fnsDeployer = await ethers.getContractAt("ZKFRegistrarController", "0x910350d457933452a3C638317d62e2EFae6e6827");
+    const owner =  await fnsDeployer.owner();
      
-    console.log("baseRegistrarImplementation: "+ baseRegistrarImplementation);
-    console.log("ensRegistry: "+ ensRegistry);
-    console.log("ensRegistryWithFallback: "+ ensRegistryWithFallback);
-    console.log("fifsRegistrar: "+ fifsRegistrar);
-    console.log("publicResolver: "+ publicResolver);
-    console.log("reverseRegistrar: "+ reverseRegistrar);
-    console.log("stablePriceOracle: "+ _stablePriceOracle);
-    console.log("zkfRegistrarController: "+ zkfRegistrarController);
+     
+    console.log("owner: "+ owner);
+     
  
 };
 

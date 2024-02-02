@@ -2,6 +2,7 @@
   "name": "hardhat-project",
   "dependencies": {
     "@ensdomains/buffer": "^0.1.1",
+    "@ericxstone/hardhat-blockscout-verify": "^1.0.2",
     "@openzeppelin/contracts": "^5.0.1",
     "dotenv": "^16.3.1",
     "eth-ens-namehash": "^2.0.8",
@@ -14,6 +15,7 @@
     "@nomicfoundation/hardhat-toolbox": "^4.0.0",
     "@nomicfoundation/hardhat-verify": "^2.0.3",
     "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers",
+    "@nomiclabs/hardhat-etherscan": "^3.1.8",
     "@typechain/ethers-v6": "^0.5.1",
     "@types/mocha": "^10.0.6",
     "ethers": "^6.10.0",
