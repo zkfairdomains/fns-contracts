@@ -1,8 +1,7 @@
 require("dotenv").config();
-//require("@nomicfoundation/hardhat-toolbox");
-//require("@nomiclabs/hardhat-waffle");
-require("@nomiclabs/hardhat-etherscan");
-require('hardhat-deploy');
+require("@nomicfoundation/hardhat-toolbox");
+//require("@nomiclabs/hardhat-etherscan");
+//require('hardhat-deploy');
 
 /** @type import('hardhat/config').HardhatUserConfig */
 
