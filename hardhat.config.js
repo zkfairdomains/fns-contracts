@@ -1,7 +1,7 @@
 require("dotenv").config();
 require("@nomicfoundation/hardhat-toolbox");
 //require("@nomiclabs/hardhat-etherscan");
-//require('hardhat-deploy');
+require('hardhat-deploy');
 
 /** @type import('hardhat/config').HardhatUserConfig */
 
@@ -41,7 +41,7 @@ module.exports = {
         }
     },
     sourcify: {
-      enabled: true
+      enabled: false
     },
     etherscan: {
         apiKey: process.env.ETHER_SCAN_API_KEY,
