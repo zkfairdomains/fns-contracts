@@ -38,8 +38,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/registry/ENSRegistry.sol": {
-      "lastModificationDate": 1705580097425,
-      "contentHash": "3701094014f93ce4727abbd76c4513d2",
+      "lastModificationDate": 1738318155833,
+      "contentHash": "d4b9c1dfad387f6489526f5c71697e1b",
       "sourceName": "contracts/registry/ENSRegistry.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -83,8 +83,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/registry/ENSRegistryWithFallback.sol": {
-      "lastModificationDate": 1705434467545,
-      "contentHash": "9a334b5ac32e8ce13df388abb7e2df9a",
+      "lastModificationDate": 1738318155833,
+      "contentHash": "1b33a12b520e3c334e5dad7d87903d65",
       "sourceName": "contracts/registry/ENSRegistryWithFallback.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -129,8 +129,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/zkfregistrar/BaseRegistrarImplementation.sol": {
-      "lastModificationDate": 1707239832928,
-      "contentHash": "1aa4d49e6ffdcdb63a4ed32c20c86513",
+      "lastModificationDate": 1738318155841,
+      "contentHash": "73752a0f3ab45bc0b068b7090abf977a",
       "sourceName": "contracts/zkfregistrar/BaseRegistrarImplementation.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -177,8 +177,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/reverseRegistrar/ReverseRegistrar.sol": {
-      "lastModificationDate": 1705592730763,
-      "contentHash": "bed1c69883429dbec52ea9a890e8e636",
+      "lastModificationDate": 1738318155839,
+      "contentHash": "fcf40a95fa2920c55372e71e3f988f67",
       "sourceName": "contracts/reverseRegistrar/ReverseRegistrar.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -226,8 +226,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/registry/FIFSRegistrar.sol": {
-      "lastModificationDate": 1706546530277,
-      "contentHash": "003b6fc26827b2cb57173a10db3e0db3",
+      "lastModificationDate": 1738318155834,
+      "contentHash": "9ebeaa6cb85a825cc85196ebeceb31a0",
       "sourceName": "contracts/registry/FIFSRegistrar.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -271,8 +271,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/zkfregistrar/ZKFRegistrarController.sol": {
-      "lastModificationDate": 1707239832926,
-      "contentHash": "92d598f072f781a29b36791848d92ca3",
+      "lastModificationDate": 1738318155842,
+      "contentHash": "094a83e8c460009e91652437f3cc9c07",
       "sourceName": "contracts/zkfregistrar/ZKFRegistrarController.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -327,8 +327,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/zkfregistrar/StablePriceOracle.sol": {
-      "lastModificationDate": 1707239832926,
-      "contentHash": "9f8ff9e3784438f6807ac226b991b1f2",
+      "lastModificationDate": 1738318155842,
+      "contentHash": "e4a5644681a4eb15dbd17e113dd6ed6d",
       "sourceName": "contracts/zkfregistrar/StablePriceOracle.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -374,8 +374,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/PublicResolver.sol": {
-      "lastModificationDate": 1705589318785,
-      "contentHash": "15766cc51667b2d6d24358823f51318c",
+      "lastModificationDate": 1738318155834,
+      "contentHash": "5006a7609111425c2980c21164285c4c",
       "sourceName": "contracts/resolvers/PublicResolver.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -428,8 +428,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/registry/ENS.sol": {
-      "lastModificationDate": 1706885559335,
-      "contentHash": "1a521d00e8b8d9c9c98e5877af32e393",
+      "lastModificationDate": 1738318155833,
+      "contentHash": "37569466e74e3427cc89ea674be7dd67",
       "sourceName": "contracts/registry/ENS.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -471,8 +471,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/zkfregistrar/IBaseRegistrar.sol": {
-      "lastModificationDate": 1706885559335,
-      "contentHash": "e2428fb065ab4d7a34c183ee1427d66a",
+      "lastModificationDate": 1738318155842,
+      "contentHash": "c23a431a614d9d2cc5bc120d1725375b",
       "sourceName": "contracts/zkfregistrar/IBaseRegistrar.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -1054,8 +1054,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/root/Controllable.sol": {
-      "lastModificationDate": 1705324319629,
-      "contentHash": "2d0513a8d7e17cf7f4aaac5fc1fc0308",
+      "lastModificationDate": 1738318155839,
+      "contentHash": "e63bc5929c0854257c73eaf619c1a05a",
       "sourceName": "contracts/root/Controllable.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -1099,8 +1099,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/reverseRegistrar/IReverseRegistrar.sol": {
-      "lastModificationDate": 1705326316652,
-      "contentHash": "b92d5803d27f7cfe9c034c5dab6f3393",
+      "lastModificationDate": 1738318155839,
+      "contentHash": "d3e6a63d4afe40f889a457434de9ac71",
       "sourceName": "contracts/reverseRegistrar/IReverseRegistrar.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -1142,8 +1142,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/Resolver.sol": {
-      "lastModificationDate": 1705328498431,
-      "contentHash": "6dda1092e0977aecfe7c91846ab1b3e3",
+      "lastModificationDate": 1738318155835,
+      "contentHash": "40ea5d3914482edb3fef07b3b88440c1",
       "sourceName": "contracts/resolvers/Resolver.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -1198,8 +1198,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/zkfregistrar/StringUtils.sol": {
-      "lastModificationDate": 1705493368358,
-      "contentHash": "3a10f282536a1ba0719a0977de39cd36",
+      "lastModificationDate": 1738318155842,
+      "contentHash": "8fdaf369ad0225e9e58edcfc1eeb52c5",
       "sourceName": "contracts/zkfregistrar/StringUtils.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -1241,8 +1241,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/reverseRegistrar/ReverseClaimer.sol": {
-      "lastModificationDate": 1705435737777,
-      "contentHash": "617be4a21f3c951ff322495f7af9f30b",
+      "lastModificationDate": 1738318155839,
+      "contentHash": "e7eb291bb595bf783dfe49897e68654e",
       "sourceName": "contracts/reverseRegistrar/ReverseClaimer.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -1287,8 +1287,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/utils/ERC20Recoverable.sol": {
-      "lastModificationDate": 1705492376624,
-      "contentHash": "fe17f93b01b9fad828c1a20bbe962e13",
+      "lastModificationDate": 1738318155840,
+      "contentHash": "eecce6757cffef7d89a963162f9abb1a",
       "sourceName": "contracts/utils/ERC20Recoverable.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -1333,8 +1333,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/zkfregistrar/IPriceOracle.sol": {
-      "lastModificationDate": 1705493368357,
-      "contentHash": "eadc5890cc839c0a0ee9431b3f3492b4",
+      "lastModificationDate": 1738318155842,
+      "contentHash": "6b15668505d7e424bc0366c8dfd79174",
       "sourceName": "contracts/zkfregistrar/IPriceOracle.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -1376,8 +1376,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/zkfregistrar/IZKFRegistrarController.sol": {
-      "lastModificationDate": 1705429668921,
-      "contentHash": "e2a108d3d9fc983d74e4b4716086990e",
+      "lastModificationDate": 1738318155842,
+      "contentHash": "37655c18a56d6064d5bf655d7c3e9c0e",
       "sourceName": "contracts/zkfregistrar/IZKFRegistrarController.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -1464,8 +1464,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/interfaces/IAddrResolver.sol": {
-      "lastModificationDate": 1705588975030,
-      "contentHash": "e7f5877654fd80a002faa1b927c143e2",
+      "lastModificationDate": 1738318155837,
+      "contentHash": "d571f73492910e1bb8d7ec45bd934cb4",
       "sourceName": "contracts/resolvers/profiles/interfaces/IAddrResolver.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -1507,8 +1507,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/interfaces/IABIResolver.sol": {
-      "lastModificationDate": 1705588971702,
-      "contentHash": "2e2f4d4ab7b786182d8f6b7fe19093aa",
+      "lastModificationDate": 1738318155837,
+      "contentHash": "8652efac6d0fdb12f43cd4e6db1569b3",
       "sourceName": "contracts/resolvers/profiles/interfaces/IABIResolver.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -1550,8 +1550,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/interfaces/IContentHashResolver.sol": {
-      "lastModificationDate": 1705588978383,
-      "contentHash": "d05b28855d6acb127d6d7e84ef82a049",
+      "lastModificationDate": 1738318155837,
+      "contentHash": "d5aa30803b20852c84e41bce181abbb5",
       "sourceName": "contracts/resolvers/profiles/interfaces/IContentHashResolver.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -1593,8 +1593,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/interfaces/IInterfaceResolver.sol": {
-      "lastModificationDate": 1705588981148,
-      "contentHash": "4350ac2877a1b553a0307d9b0ee80ffa",
+      "lastModificationDate": 1738318155838,
+      "contentHash": "6e15ec4c307bd61d530adf97533b6386",
       "sourceName": "contracts/resolvers/profiles/interfaces/IInterfaceResolver.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -1636,8 +1636,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/interfaces/IDNSZoneResolver.sol": {
-      "lastModificationDate": 1705328275266,
-      "contentHash": "7ae942c5314c2043f2036d71c44c6715",
+      "lastModificationDate": 1738318155838,
+      "contentHash": "4560d0d2d6befe78ba522652f438542a",
       "sourceName": "contracts/resolvers/profiles/interfaces/IDNSZoneResolver.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -1679,8 +1679,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/interfaces/INameResolver.sol": {
-      "lastModificationDate": 1705588984538,
-      "contentHash": "de060f57779c5b50a797e0d73266488a",
+      "lastModificationDate": 1738318155838,
+      "contentHash": "4e2a5c58690d715f7a45181e6b5b8039",
       "sourceName": "contracts/resolvers/profiles/interfaces/INameResolver.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -1722,8 +1722,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/interfaces/IPubkeyResolver.sol": {
-      "lastModificationDate": 1705588988186,
-      "contentHash": "1de147a3a9abb36b4e6ba9269a213fbf",
+      "lastModificationDate": 1738318155838,
+      "contentHash": "ddede155e30fc9d144c32fc86afba53f",
       "sourceName": "contracts/resolvers/profiles/interfaces/IPubkeyResolver.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -1765,8 +1765,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/interfaces/ITextResolver.sol": {
-      "lastModificationDate": 1705588990938,
-      "contentHash": "14ae3b9b5820f6f773306d9ec8fd8c47",
+      "lastModificationDate": 1738318155838,
+      "contentHash": "ffe3c7c3fe7fca02a1271be021995282",
       "sourceName": "contracts/resolvers/profiles/interfaces/ITextResolver.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -1808,8 +1808,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/interfaces/IDNSRecordResolver.sol": {
-      "lastModificationDate": 1705328262678,
-      "contentHash": "f9be162bff68e0104f45e7a016979196",
+      "lastModificationDate": 1738318155837,
+      "contentHash": "6286bd237b97d6728351c9cc198eb74c",
       "sourceName": "contracts/resolvers/profiles/interfaces/IDNSRecordResolver.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -1851,8 +1851,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/interfaces/IExtendedResolver.sol": {
-      "lastModificationDate": 1705328102252,
-      "contentHash": "71ea7a7ac888bf7de035524162750a9a",
+      "lastModificationDate": 1738318155838,
+      "contentHash": "a639ee1eae5cc088fcd9cbf00115fbaf",
       "sourceName": "contracts/resolvers/profiles/interfaces/IExtendedResolver.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -1894,8 +1894,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/interfaces/IAddressResolver.sol": {
-      "lastModificationDate": 1705328072314,
-      "contentHash": "6e9f4a9710996bdd907456126d02d606",
+      "lastModificationDate": 1738318155837,
+      "contentHash": "5929fac80a866aa0b3aac7f47555361b",
       "sourceName": "contracts/resolvers/profiles/interfaces/IAddressResolver.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -1980,8 +1980,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/ABIResolver.sol": {
-      "lastModificationDate": 1705588936841,
-      "contentHash": "8439510cf2f6283a9154dc1167670370",
+      "lastModificationDate": 1738318155835,
+      "contentHash": "72c0bfb64dbc788346b00df75229d3d9",
       "sourceName": "contracts/resolvers/profiles/ABIResolver.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -2026,8 +2026,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/AddrResolver.sol": {
-      "lastModificationDate": 1705588943637,
-      "contentHash": "26a1282a165d1f4c511cf0f3a4c8f239",
+      "lastModificationDate": 1738318155835,
+      "contentHash": "e24e6c9f32f8ecfd8c55e3bc451dfc6d",
       "sourceName": "contracts/resolvers/profiles/AddrResolver.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -2073,8 +2073,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/ContentHashResolver.sol": {
-      "lastModificationDate": 1705588948857,
-      "contentHash": "1bba6b75fe4497209deaac3dda2313b2",
+      "lastModificationDate": 1738318155835,
+      "contentHash": "bb6338828587fdeb1a363af7ef0528c2",
       "sourceName": "contracts/resolvers/profiles/ContentHashResolver.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -2119,8 +2119,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/DNSResolver.sol": {
-      "lastModificationDate": 1705329532220,
-      "contentHash": "e5b925a4ca94270e68b12ab1a3a4acde",
+      "lastModificationDate": 1738318155835,
+      "contentHash": "030b8ed3d5006b3cfb4b0f077825ed28",
       "sourceName": "contracts/resolvers/profiles/DNSResolver.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -2167,8 +2167,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/InterfaceResolver.sol": {
-      "lastModificationDate": 1705588955869,
-      "contentHash": "6f0d8ec7c290044cf014f32088434e19",
+      "lastModificationDate": 1738318155836,
+      "contentHash": "763c50e18cff75c62f0d29a1474c4032",
       "sourceName": "contracts/resolvers/profiles/InterfaceResolver.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -2215,8 +2215,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/NameResolver.sol": {
-      "lastModificationDate": 1705588960277,
-      "contentHash": "d205c9081d57031fd27813adb1a7571c",
+      "lastModificationDate": 1738318155836,
+      "contentHash": "3ee637a78a6e2347f208bf261f5a87a8",
       "sourceName": "contracts/resolvers/profiles/NameResolver.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -2261,8 +2261,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/PubkeyResolver.sol": {
-      "lastModificationDate": 1705588963868,
-      "contentHash": "d3afb6eaa60714a19b0054d406b6489b",
+      "lastModificationDate": 1738318155836,
+      "contentHash": "fa327832a0ec467e15efe1163c3f3ddd",
       "sourceName": "contracts/resolvers/profiles/PubkeyResolver.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -2307,8 +2307,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/TextResolver.sol": {
-      "lastModificationDate": 1705588968235,
-      "contentHash": "bbde98d48b155167063282f970db1f75",
+      "lastModificationDate": 1738318155836,
+      "contentHash": "ed52f605b7e0f7a00420965fd59abd62",
       "sourceName": "contracts/resolvers/profiles/TextResolver.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -2353,8 +2353,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/Multicallable.sol": {
-      "lastModificationDate": 1705327199706,
-      "contentHash": "350d6fc242be85c749cf365faabd94ce",
+      "lastModificationDate": 1738318155834,
+      "contentHash": "8d563c296edf468711d5a41810fdaa7e",
       "sourceName": "contracts/resolvers/Multicallable.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -2399,8 +2399,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/ResolverBase.sol": {
-      "lastModificationDate": 1705592726885,
-      "contentHash": "0a6269ba83a5792e620fbf95cc85fc9d",
+      "lastModificationDate": 1738318155835,
+      "contentHash": "37c3bb28cff9fa7738378817886772bf",
       "sourceName": "contracts/resolvers/ResolverBase.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -2445,8 +2445,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/interfaces/IVersionableResolver.sol": {
-      "lastModificationDate": 1705328136446,
-      "contentHash": "2ef84231523c76b7e341cf61ac8b1655",
+      "lastModificationDate": 1738318155838,
+      "contentHash": "09fe937cf919652914c9aa00319a39f3",
       "sourceName": "contracts/resolvers/profiles/interfaces/IVersionableResolver.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -2488,8 +2488,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/dnssec-oracle/RRUtils.sol": {
-      "lastModificationDate": 1705329547451,
-      "contentHash": "e47cb751d0f53d85d5fb49a82ee8ce93",
+      "lastModificationDate": 1738318155833,
+      "contentHash": "9ff305c0d028c914a1371fa2d8ecac6a",
       "sourceName": "contracts/dnssec-oracle/RRUtils.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -2534,8 +2534,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/dnssec-oracle/BytesUtils.sol": {
-      "lastModificationDate": 1705329543635,
-      "contentHash": "a511e9e56fd90bb74a76adc3a688fe5d",
+      "lastModificationDate": 1738318155833,
+      "contentHash": "0e1f65c413141a27dc72899fe34786e6",
       "sourceName": "contracts/dnssec-oracle/BytesUtils.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -2620,8 +2620,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/IMulticallable.sol": {
-      "lastModificationDate": 1705327196755,
-      "contentHash": "d48a17145ec41de476d04d37ee21938c",
+      "lastModificationDate": 1738318155834,
+      "contentHash": "a73e969a1a93b24ca71cf142286356b7",
       "sourceName": "contracts/resolvers/IMulticallable.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -2708,8 +2708,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/wrapper/INameWrapper.sol": {
-      "lastModificationDate": 1705435956346,
-      "contentHash": "1090cb3c4c518f35b76b8c31b5713222",
+      "lastModificationDate": 1738318155841,
+      "contentHash": "3a478ee7eb7cba3e80157f6f8b062189",
       "sourceName": "contracts/wrapper/INameWrapper.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -2757,8 +2757,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/wrapper/INameWrapperUpgrade.sol": {
-      "lastModificationDate": 1705329159542,
-      "contentHash": "548e2292dfc18f1daa758ad4cad6cfad",
+      "lastModificationDate": 1738318155841,
+      "contentHash": "73fb1abd700ae7325a24e988ec3de93a",
       "sourceName": "contracts/wrapper/INameWrapperUpgrade.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -2800,8 +2800,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/wrapper/IMetadataService.sol": {
-      "lastModificationDate": 1705329190887,
-      "contentHash": "a4437e24a622bf947739be1992a01a6f",
+      "lastModificationDate": 1738318155841,
+      "contentHash": "3cc9ca12a852f6431bd81374a8a37a07",
       "sourceName": "contracts/wrapper/IMetadataService.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -2843,8 +2843,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/wrapper/Controllable.sol": {
-      "lastModificationDate": 1705427568163,
-      "contentHash": "b448118fb51691ec5e0bdfcb93c41f80",
+      "lastModificationDate": 1738318155840,
+      "contentHash": "8fd8b185b3e5db74485768e523fbf2c5",
       "sourceName": "contracts/wrapper/Controllable.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -2888,8 +2888,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/root/Root.sol": {
-      "lastModificationDate": 1705435829643,
-      "contentHash": "6860927319e9218c93736ac77f575a2b",
+      "lastModificationDate": 1738318155840,
+      "contentHash": "3b471042654fd318f4ef83c4b6160bde",
       "sourceName": "contracts/root/Root.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -2935,8 +2935,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/OwnedResolver.sol": {
-      "lastModificationDate": 1705329752133,
-      "contentHash": "6f2128e2c3610dfe0d6ba4f4b3572d6c",
+      "lastModificationDate": 1738318155834,
+      "contentHash": "087c5270c867d9d09412edc4607ad92c",
       "sourceName": "contracts/resolvers/OwnedResolver.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -2989,8 +2989,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/ExtendedResolver.sol": {
-      "lastModificationDate": 1705327637854,
-      "contentHash": "cf9d6ea78660588055227b7ff7eee2f1",
+      "lastModificationDate": 1738318155836,
+      "contentHash": "6696b1b008f51a7bec3d8b695a30f84c",
       "sourceName": "contracts/resolvers/profiles/ExtendedResolver.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -3032,8 +3032,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/ExtendedDNSResolver.sol": {
-      "lastModificationDate": 1705329560676,
-      "contentHash": "bf9f9af01d9b8b9990b8573c2338654d",
+      "lastModificationDate": 1738318155836,
+      "contentHash": "abd1b608f051205c2682ef7310f7b80d",
       "sourceName": "contracts/resolvers/profiles/ExtendedDNSResolver.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -3081,8 +3081,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/resolvers/profiles/interfaces/IExtendedDNSResolver.sol": {
-      "lastModificationDate": 1705328799546,
-      "contentHash": "21e47dfc83f8cabb2931445772ae75ce",
+      "lastModificationDate": 1738318155838,
+      "contentHash": "2084cdebae5e320f4a65ac4eeaac8bc8",
       "sourceName": "contracts/resolvers/profiles/interfaces/IExtendedDNSResolver.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -3124,8 +3124,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/utils/HexUtils.sol": {
-      "lastModificationDate": 1705328549001,
-      "contentHash": "aab51fc7ab6758cffbd4fb82149a82d5",
+      "lastModificationDate": 1738318155840,
+      "contentHash": "f54291edb065f0867b7ef0d3d2eec0ad",
       "sourceName": "contracts/utils/HexUtils.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -3167,8 +3167,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/registry/TestRegister.sol": {
-      "lastModificationDate": 1705434457117,
-      "contentHash": "0ce466d8a6fc94372f2541708b72d4c2",
+      "lastModificationDate": 1738318155834,
+      "contentHash": "6690af1e55e81ed080edb13a233c88ce",
       "sourceName": "contracts/registry/TestRegister.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -3212,8 +3212,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/root/Ownable.sol": {
-      "lastModificationDate": 1705324322501,
-      "contentHash": "3dace1e3fb1d1cf61d3b9458481d3c8e",
+      "lastModificationDate": 1738318155839,
+      "contentHash": "baa7f6a70a927881ee9103e7ab66feb9",
       "sourceName": "contracts/root/Ownable.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -3255,8 +3255,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/wrapper/BytesUtils.sol": {
-      "lastModificationDate": 1705427791095,
-      "contentHash": "4c9ab2d8d1a8401033b6644b7db331a9",
+      "lastModificationDate": 1738318155840,
+      "contentHash": "9dbd125c0596dd464bb197aaa8b05b56",
       "sourceName": "contracts/wrapper/BytesUtils.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -3298,8 +3298,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/wrapper/StaticMetadataService.sol": {
-      "lastModificationDate": 1705427162348,
-      "contentHash": "88a29bdb35e10b5780f4b608cd87b4d3",
+      "lastModificationDate": 1738318155841,
+      "contentHash": "d26045b33af9762cf656877d64793094",
       "sourceName": "contracts/wrapper/StaticMetadataService.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -3341,8 +3341,8 @@
       ]
     },
     "/Users/rdonmez/Documents/fns-contracts/contracts/zkfregistrar/SafeMath.sol": {
-      "lastModificationDate": 1705352305730,
-      "contentHash": "bbd3f613875d873cafcdb1ab09783d5d",
+      "lastModificationDate": 1738318155842,
+      "contentHash": "28030c2765e2c289656e71b6ab23d053",
       "sourceName": "contracts/zkfregistrar/SafeMath.sol",
       "solcConfig": {
         "version": "0.8.20",
